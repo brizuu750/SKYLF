@@ -1,0 +1,52 @@
+#include <SoftwareSerial.h>
+
+// Definición de pines para RE y DE
+#define RE 32
+#define DE 33
+
+// Configuración del puerto SoftwareSerial
+SoftwareSerial mod(26, 27); // RX, TX
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println("Iniciando...");
+  mod.begin(9600); // Configuración de Modbus
+  pinMode(RE, OUTPUT);
+  pinMode(DE, OUTPUT);
+  digitalWrite(RE, LOW); // Habilitar recepción
+  digitalWrite(DE, LOW); // Habilitar recepción
+}
+
+void loop() {
+  Serial.println("Enviando comando Modbus...");
+  // Ejemplo de comando Modbus para establecer la frecuencia a 30 Hz
+  byte ModWriteBuffer[8] = {0x01, 0x06, 0x00, 0x01, 0x00, 0x2135, 0x49, 0xC5}; // Cambia 0x001E por la frecuencia deseada
+  byte BufferValue[8];
+
+  // Enviar comando Modbus
+  digitalWrite(DE, HIGH); // Habilitar transmisión
+  digitalWrite(RE, HIGH); // Habilitar transmisión
+  delay(10);
+  mod.write(ModWriteBuffer, sizeof(ModWriteBuffer));
+  delay(10);
+  digitalWrite(DE, LOW); // Habilitar recepción
+  digitalWrite(RE, LOW); // Habilitar recepción
+
+  // Leer respuesta
+  int i = 0;
+  while (mod.available()) {
+    BufferValue[i] = mod.read();
+    i++;
+  }
+
+  // Imprimir respuesta en el Monitor Serie
+  Serial.print("Respuesta Modbus: ");
+  for (int j = 0; j < i; j++) {
+    Serial.print(BufferValue[j], HEX);
+    Serial.print(" ");
+  }
+  Serial.println();
+
+  delay(5000); // Esperar 5 segundos antes de enviar el siguiente comando
+}
+
