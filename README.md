@@ -9,7 +9,7 @@ Nuestro proyecto es continuar con el simulador de vuelo que empezo el grupo llam
 
 Lautaro Estebanquito
 
-Agustin Buñuelos
+Agustin Papasote Buñuelos
 
 Apendice Jofiel Godoy Cruz
 
