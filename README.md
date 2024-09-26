@@ -7,18 +7,18 @@ Nuestro proyecto es continuar con el simulador de vuelo que empezo el grupo llam
 
 ## Integrantes:
 
-Lautaro Estebanquito
+Lautaro Esteban
 
-Agustin Buñuelos
+Agustin Brizuela
 
-Apendice Jofiel Godoy Cruz
+Marco Jofiel Godoy Baldovino
 
-Lucas David Boeabrio Scott
+Lucas David Meabrio
 
-Apu Leandro Flores Morales
+Leandro Flores
 
-Santiago Leivoso
+Santiago Leiva
 
-Emiliano Trello Romocordoba
+Emili Ano Romo Cordoba
 
 Santiago Rubio
