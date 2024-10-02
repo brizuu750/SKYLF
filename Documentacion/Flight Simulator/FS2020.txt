@@ -1,0 +1,14 @@
+Para comprobar componentes:
+https://www.systemrequirementslab.com/detect/?ref-id=1046&next=/rank-my-computer/&error=/rank-my-computer/
+
+Para instalarlo: 
+
+
+Requisitos minimos:
+Requiere un procesador y un sistema operativo de 64 bits
+Sistema Operativo: Windows 10
+Procesador: Intel i5-4460 | AMD Ryzen 3 1200
+Memoria: 8 GB de RAM
+Gráficos: NVIDIA GTX 770 | AMD Radeon RX 570
+DirectX: Versión 11
+Almacenamiento: 150 GB de espacio disponible
