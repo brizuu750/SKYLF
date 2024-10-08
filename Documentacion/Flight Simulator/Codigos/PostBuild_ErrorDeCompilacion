@@ -1,0 +1,7 @@
+xcopy "RUTA\SimConnect.cfg" "$(TargetDir)" /Y
+xcopy "RUTA\SimConnect.dll" "$(TargetDir)" /Y 
+
+/*
+Si hay problemas con la compilacion de los codigos se puede usar el codigo en la postbuild del codigo para copiar los archivos y arreglar el error (en nuestro
+caso el error se producia por no encontrar el modulo especificado)
+*/
