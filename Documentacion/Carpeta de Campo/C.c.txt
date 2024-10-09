@@ -1,0 +1,146 @@
+CC Proyecto SKYLF - E.E.S.T N°7 “TRQ” – Secundario – 7°2° aviónica 
+12/3/24
+    • Se comenzó a trabajar en el anteproyecto para poder empezar a trabajar de manera física en el proyecto, en este se adjuntó una descripción breve del proyecto y especificaciones de la manera que pensábamos trabajar. Aquí dejo adjunto el anteproyecto de muestra para ver lo realizado:
+
+19/3/24
+    • Comenzamos a trabajar en el proyecto de manera oficial en el simulador de vuelo, se comenzó a desmontar plaquetas y instrumentos de la cabina para verificar su funcionamiento correcto.
+    • Los instrumentos que se usaban para la simulación luego de ser testeadas se determino que ya no funcionaban y se empezó la búsqueda de un reemplazo de esos instrumentos.
+    • Se buscaron mas fallas generales del proyecto, notamos mucho oxido en la estructura del simulador provocado por goteras ubicadas justo encima de la ubicación del simulador.
+
+20/3/24
+    • empezamos un testeo detallado de cada placa utilizadas en las conexiones del simulador, tuvimos dificultades ya que el multímetro dejo de funcionar lo que nos atrasó en este aspecto.
+    • Planteamos ideas para poder mejorar el proyecto, algunas de ellas fue cambiar de programa utilizado para la simulación de vuelo, un nuevo sistema de audio para mejorar el realismo del sonido y que se siento mas realista para la persona que lo utilice, cambiar las conexiones de las térmicas para mayor seguridad, etc.
+    • Buscamos información sobre en qué avión se basaron al hacer el simulador de vuelo para ya saber en que panel basarnos, encontramos que se usó como referencia el panel de un Cessna 172 pero se le realizaron modificaciones para lograr adaptarlo a las medidas del panel
+26/3/24
+    • Se continuo con el testeo de las placas, determinamos que no tienen ninguna falla, sin embargo, creemos factible reemplazar algunas placas para mayor seguridad de su funcionamiento ya que tienen algo gastado el estaño y puede provocar problemas más adelante.
+    • También se verifico el funcionamiento de la fuente de poder utilizada en el proyecto y luego de una larga revisión e intento de salvarla determinamos que no funcionaba. 
+    • Se empezó a lijar la estructura para sacarle el óxido con un pequeño avance debido a que la lija se terminó rápidamente, se nos ocurrió utilizar una amoladora con disco flap para terminar tal tarea, no podemos realizarlo hasta que consigamos el material.
+    • Se empezó la búsqueda de variables necesarias para el programa utilizado en el simulador de vuelo.
+    • También, se comenzó la búsqueda de los modelos de los motores utilizados en la estructura y también buscamos el modelo de los variadores de frecuencia del cual encontramos la documentación.
+24/4/24
+    • Iniciamos la documentación en una carpeta de campo
+    • Seguimos informándonos sobre los variadores de frecuencia y su comunicación entre los micros SP32 y RS485
+    • Seguimos con el trabajo de ayer buscando más empresas y capacitándonos sobre los programas para la creación de estructuras mediante impresión 3d
+    • Logramos una respuesta del exalumno Marcos Alegre. Sin embargo, no conseguimos la documentación, debido a que necesitamos aun una autoridad formal de la escuela que se comunique con ellos, supuestamente.
+    • Intentamos comunicarnos con los profesores Sergio Medina y Gabriel Arguello para que hagan de intermediarios con el proyecto AVIS y concretar la obtención de la documentación técnica 
+    • Nos comunicamos con Arguello (El jefe de área) para saber si se comunicaron los del anterior proyecto con él. Algo que sí hicieron, pero hace unas semanas para concretar una videoconferencia para hablar sobre el proyecto. Por temas de tiempo de los anteriores integrantes no se pudo hacer esta reunión. 
+30/4/24
+
+14/5/24 
+    • Lautaro Esteban, Agustín Brizuela y Lucas Meabrio repasaron lo más importante a mencionarse en la entrevista que se daría el día siguiente en la radio “Radio Coctel Max”. 
+    • Santiago Rubio y Agustín Brizuela estuvo realizando el croquis de la cabina 
+    • Santiago Leiva y Agustín Brizuela tomaron las mediciones de la cabina para que Santiago Rubio pueda hacer el croquis
+21/5/24
+    • No se hizo ninguna actividad relacionada con el proyecto. Esto es porque estudiamos para una prueba que teníamos esta tarde con el profe Salinas.
+
+28/5/24
+    • Esteban y Meabrio hicieron la lista de componentes subida en el drive que nos pasó Medina. 
+    • Brizuela analizo empresas para intentar conseguir un patrocinio o sponsor que logre favorecer al grupo Skyfly y al simulador de vuelo 
+4/6/24 
+    • Lautaro, Lucas, Leandro y Agustín buscan el gancho para realizar el desmontado del motor.
+    • Logramos con ayuda de instrumentos tales como llaves de tuerca desmontamos el motor paso a paso. 
+    • Llevamos el Motor Stepper a nuestro lugar de trabajo para iniciar el proceso de mantenimiento. Hubo dificultades al llevarlo debido a el peso y lo frágil que es la Motor Stepper, al igual que los instrumentos como, las llaves francesas, las llaves de tuerca y la pluma. 
+    • Se ha realizado el croquis de el soporte de la cabina del simulador de vuelo.
+
+7/6/24 
+    • Con ayuda de los profesores, Nicolas Solomiewicz y Bianco, logramos sacar el óxido del motor con un cepillo de alambre, también lo lubricamos y logramos verificar que el funcionamiento del motor siga en condiciones. Aparte, nos dio bastante información sobre el funcionamiento del motor que nos resultó útil.
+
+11/6/24
+    • Jofiel y Brizuela consiguieron el material necesario y arrancaron con la construcción de lo que seria un nuevo panel de indicadores e instrumentos de la cabina. 
+    • Leiva, Esteban y Flores investigan sobre los procesos correctos para lograr el encendido del motor mediante el variador de frecuencia. 
+    • Rubio y Meabrio realizan la carpeta de campo y la investigación sobre como extraer las variables del simulador
+13/6
+    • Conectamos el Variador de Frecuencia a el motor
+    • A el motor le aplicamos baja frecuencia para hacer la primera prueba de giro. Como respuesta el motor giró sin problemas.
+18/6
+    • C
+    • A 
+20/6
+    • C
+    • A
+
+25/6
+    • C
+    • A
+
+2/7
+    • El grupo busco en conjunto soluciones para el variador de frecuencia y como hacerlo funcionar
+
+9/7
+    • Lautaro Esteban, Santiago Rubio, Santiago Leiva y Leandro Flores probaron el Rs485 que nos dió el profesor Medina (en las vacaciones nos dimos cuenta que no funcionó)
+    • Agustín Brizuela, Jofiel Godoy y Lucas Meabrio empezaron a actualizar el panel de instrumentos de la cabina
+    • Emiliano Romo Córdoba y Santiago Leiva contribuyeron con las redes sociales y la búsqueda de sponsors para el proyecto
+
+----------------------------------------------------
+VACACIONES DE INVIERNO 
+----------------------------------------------------
+Del martes 30/7 al 3/9 los martes toda la comision tuvo clases de drones por lo que no se realizo ninguna practica profesionalizante 
+23/8
+    • Avanzamos con la comunicacion del variador de frecuencia y obtuvimos un contacto de Juan... para que nos oriente con este tema y el proyecto en general
+26/8
+    • Leandro Flores, Lautaro Esteban, Jofiel Godoy y Lucas Meabrio fueron hasta C.A.B.A para comprar en Microelectronica Componentes SRL: un ESP32, dos RS845 y cinco borneras que son para el proyecto bias. Comprobante:
+
+28/8
+    • Jofiel Godoy, Santiago Rubio y Lucas Meabrio actualizan la carpeta de campo
+    • Santiago rubio y Lucas Meabrio desinstalaron del disco de la pc del proyecto lo relacionado a X-Plane para poder instalar el Flight Simulator X, el cual va a ser el nuevo software del proyecto. 
+    • Lautaro Esteban, Santiago Leiva, Alfre Flores y Emiliano Romo Cordoba testean al RS845 y ESP32 con el variador de frecuencia. 
+    • Jofiel Godoy testeando las conexiones entre los componentes internos del panel de contro.
+    • Emiliano Romo Cordoba suelda cables para que sean aptos para la utilizacion.   
+    • Jofiel Godoy midio la continuidad del MPU6050 y saco la conclusion de que no funciona el pin VCC, por lo que se necesesitara de otra 
+4/9
+    • Se hicieron las conexiones entre el rs485 el esp32 y el variador de Frecuencia (Estuvieron involucrados Leandro Flores, Santiago Leiva y Lautaro Esteban)
+    • - Se investigó sobre la comunicación MODBUS
+    • - Se hicieron pruebas básicas entre la comunicación del ESP32 y el variador de frecuencia (exitoso)
+    • - Se continuó la investigación sobre el ESP32 y el variador de frecuencia de manera compleja
+    • Agustín Brizuela y Lucas Meabrio configuraron el Yoke y el pedestal para que sea compatible con el FSX. 
+    • Se pidió a cooperadora unos pedales para un manejo más profesional del simulador. 
+    • Jofiel Godoy investigó sobre el funcionamiento de la función de cada palanca del panel de luces y motores.
+
+6/9
+    • Santiago Rubio y Lucas Meabrio instalaron los drivers necesarios para el correcto funcionamietno del FSX  y lograron que arrancara correctamente 
+    • Lautaro Esteban, Leandro Flores y Santiago Leiva prueba la conexion con el variador de frecuencia. 
+    • Agustin Briuela y Jofiel Godoy estan trabajando para ensamblar el panel para los instrumentos del simulador
+7/9
+    • Lautaro Esteban, Leandro Flores y Santiago Leiva fueron a buscar la ayuda de un tercero para el variador de frecuencia, de la empresa JFL.   
+10/9
+    • Jofiel Godoy y Agustin brizuela siguen con la construccion del panel.
+    • Lautaro Esteban, Leandro flores y Santiago Leiva verifican todo el codigo del variador de frecuencia.
+    • Santiago Rubio y Lucas Meabrio instalaron el SimVar Watcher para extraer las variables del FSX . 
+17/9
+    • Jofiel Godoy y Agustin Brizuela intentar usar Arduino para el panel que estan diseñando 
+    • Lautaro Esteban, Santiago Leiva y Santiago Rubio crean el codigo para el variador de frecuencia 
+    • Lucas Meabrio instala todos los drivers necesarios para el SimVar Watcher y el Mobiflight, pero evaluamos cambiar el software al Flight Simulator 2020 porque esta dando muchos errores. 
+    • Emiliano Romo Cordoba toma medidas de la cabina para hacer ajustes por las actualizaciones que hicimos 
+
+18/9
+    • Santiago Rubio y Lucas Meabrio reinstalan varios archivos y drivers para intentar solucionar el error de FSX 
+    • Lautaro Esteban, Leandro Flores y Santiago Leiva prueban el codigo con el variador, que nos sigue dando cierta incompatibilidad. 
+    • Jofiel Godoy y Agustin Brizuela continuan con el sistema de arudino que quieren implementar en el panel  
+24/9
+    • Jofiel Godoy y Agustin Brizuela siguen con el arduino, pero creen que es mejor usar un arduino leonardo en vez del uno porque les esta dando ciertos errores. 
+    • Leandro Flores, Lautaro Esteban y Santiago Leiva actualizan la documentacion tanto del trello como del github para los variadores de frecuencia, tambien siguen avanzando con este
+    • Santiago Rubio y Lucas Meabrio intentan conseguir los archivos necesarios para instalar el Flight Simulator 2020, ya que el FSX esta dando muchos problemas 
+    • Emiliano Romo Cordoba instaló un monitor de los dos necesarios en el simulador y esta diseñando el soporte para colocar el segundo sin molestar el uso del yoke en el simulador
+25/9
+    • Toda la comision se sentró mas en hacer commits en el github ya que el profesor Sergio Medina nos dio como tarea tener al menos 20 commits en el repositorio de github del proyecto a cada integrante.
+
+1/10
+    • Agustin Brizuela continuo con las mejoras para el panel de control 
+    • Jofiel Godoy investigo sobre como implementar mobiflight al proyecto 
+    • Lautaro Esteban, Santiago Leeiva y Leandro Flores hicieron un nuevo codigo de prueba de 50hz para el variador de frecuencia y lo probaron. 
+    • Emiliano Romo Cordoba mejora refacciona la estructura de la cabina 
+2/10
+    •  Agustin Brizuela continuo probando la raspberry, esta parece que se quemo por lo que habria que usar una nueva  
+7/10
+    •  Agustin Brizuela y Santiago Rubio continuaon con las mejoras para el panel de control. Se dieron cuenta que faltaba instalar una libreria. 
+    • Santiago Rubio logro hacer que las variables sean leidas en el FS2020. 
+    • Lucas Meabrio avanzo en la carpeta de campo y busque codigos para testear las variables del simvar watcher 
+    • Lautaro Esteban, Santiago Leiva y Leandro Flores hicieron funcionar el variador de frecuencia con su codigo.   
+8/10
+    •  Agustin Brizuela continuo con las mejoras para el panel de control ya con todas las librerias listas. 
+    • Jofiel Godoy esta desoldando los cables de una raspberry para que Agustin Brizuela y el puedan avanzar con el panel
+    • Leandro Flores, Santiago Leiva y Lautaro Esteban prueban mas codigos para el variador de frecuencia
+    • Emiliano Romo Cordoba avanza con la estructura de la cabina 
+    • Lucas Meabrio avanzo con la carpeta de campo y con Santiafo Rubio avanzaron con los condigos necesarios para el simvar
+    • Santiago Rubio avanzo con los codigos para probar el simvar y arreglo un problema que este daba un error (no detecta un archivo)
+
