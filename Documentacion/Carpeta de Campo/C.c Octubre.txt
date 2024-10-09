@@ -1,0 +1,22 @@
+C.c Octubre 
+
+1/10
+    • Agustin Brizuela continuo con las mejoras para el panel de control 
+    • Jofiel Godoy investigo sobre como implementar mobiflight al proyecto 
+    • Lautaro Esteban, Santiago Leeiva y Leandro Flores hicieron un nuevo codigo de prueba de 50hz para el variador de frecuencia y lo probaron. 
+    • Emiliano Romo Cordoba mejora refacciona la estructura de la cabina 
+2/10
+    •  Agustin Brizuela continuo probando la raspberry, esta parece que se quemo por lo que habria que usar una nueva  
+7/10
+    •  Agustin Brizuela y Santiago Rubio continuaron con las mejoras para el panel de control. Se dieron cuenta que faltaba instalar una libreria. 
+    • Santiago Rubio logro hacer que las variables sean leidas en el FS2020. 
+    • Lucas Meabrio avanzo en la carpeta de campo y busque codigos para testear las variables del simvar watcher 
+    • Lautaro Esteban, Santiago Leiva y Leandro Flores hicieron funcionar el variador de frecuencia con su codigo.   
+8/10
+    •  Agustin Brizuela continuo con las mejoras para el panel de control ya con todas las librerias listas. 
+    • Jofiel Godoy esta desoldando los cables de una raspberry para que Agustin Brizuela y el puedan avanzar con el panel
+    • Leandro Flores, Santiago Leiva y Lautaro Esteban prueban mas codigos para el variador de frecuencia
+    • Emiliano Romo Cordoba avanza con la estructura de la cabina 
+    • Lucas Meabrio avanzo con la carpeta de campo y con Santiafo Rubio avanzaron con los condigos necesarios para el simvar
+    • Santiago Rubio avanzo con los codigos para probar el simvar y arreglo un problema que este daba un error (no detecta un archivo)
+
