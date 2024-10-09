@@ -8,7 +8,7 @@ C.c Octubre
 2/10
     • Agustín Brizuela: Siguió trabajando en la Raspberry Pi, ajustando el código utilizado para el panel de control. Sin embargo, durante este proceso, la Raspberry sufrió daños. Se procederá a investigar las causas del fallo para evitar su repetición, considerando la adquisición de una nueva Raspberry Pi.
 7/10
-    • Agustín Brizuela y Santiago Rubio: Continuaron con la optimización del panel de control. Tras detectar pequeñas fallas, identificaron que la instalación de una librería      • faltante era la causa principal, procediendo a su corrección.
+    • Agustín Brizuela y Santiago Rubio: Continuaron con la optimización del panel de control. Tras detectar pequeñas fallas, identificaron que la instalación de una librería faltante era la causa principal, procediendo a su corrección.
     • Santiago Rubio: Logró que las variables fueran correctamente leídas en el simulador de vuelo (FS2020), mejorando la integración de datos.
     • Lucas Meabrio: Actualizó la carpeta de campo, investigó códigos relevantes y realizó pruebas para la correcta lectura de las variables del SimVar Watcher.
     • Lautaro Esteban, Santiago Leiva y Leandro Flores: Investigaron posibles fallos en el sistema y se pusieron en contacto con los fabricantes de GTake para ver si nos pueden proporcionar informacion sobre registros del variador de frecuencia. Tras un análisis exhaustivo, creen haber identificado el registro correcto. También realizaron pruebas con modificaciones menores en el código.
