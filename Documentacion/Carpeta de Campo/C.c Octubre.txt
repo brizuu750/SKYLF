@@ -19,12 +19,11 @@ C.c Octubre
     • Emiliano Romo Córdoba: Avanzó con la estructura de la cabina, tomando nuevas medidas y desarrollando implementaciones adicionales.
     • Lucas Meabrio y Santiago Rubio: Avanzaron en la programación de los códigos necesarios para el SimVar, resolviendo un error crítico que impedía la correcta detección de un archivo específico, tambien, Lucas Meabrio actualizo la carpeta de campo a dia de hoy.
 9/10
-    • Agustin Brizuela:
-    • Jofiel Godoy:
+    • Agustin Brizuela: Logro terminar el desarrollo del código para el panel de control del simulador. Tambien se integraron y probaron diversos módulos y librerías para asegurar el funcionamiento óptimo de todos los componentes, como interruptores y pantallas. Con el código final implementado, el panel está completamente operativo y listo para ofrecer una experiencia de control precisa y realista en el simulador.
+    • Jofiel Godoy: Investigó cómo conectar Mobiflight al simulador de vuelo FS2020 y cómo configurarlo para que se muestre en un segundo monitor, específicamente en la pantalla de instrumentos del simulador. Enfocandose en cómo establecer la integración adecuada entre Mobiflight y FS2020, aprovechando las capacidades de Mobiflight para recibir y mostrar datos en tiempo real del simulador, como la altitud, velocidad, rumbo y otros parámetros críticos.
     • Leandro Flores, Santiago Leiva y Lautaro esteban: Continuaron con la investigación sobre las fallas en la comunicación entre el variador de frecuencia y el ESP32. A pesar de realizar una prueba con el código diseñado para identificar el registro adecuado del variador de frecuencia, no se obtuvo el resultado esperado. Debido a esto, comenzaron a desarrollar un segundo código con el objetivo de localizar de manera precisa el registro correcto del variador de frecuencia, lo que permitirá una comunicación estable y sin errores en futuras pruebas.
-    • Emiliano Romo Cordoba:
-    • Lucas Meabrio:
-    • Santiago Rubio:
+    • Emiliano Romo Cordoba: Realizo la instalacion del soporte para la pantalla del simulador y el lijado las superficies en preparación para la pintura.
+    • Lucas Meabrio y Santiago Rubio: Lograron establecer una comunicación efectiva entre las variables del simulador de vuelo FS2020, extraídas a través de SimVar Watcher, y un código que permite leer y utilizar dichas variables para ejecutar acciones específicas.
 
 
 
