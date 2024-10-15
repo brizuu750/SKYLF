@@ -1,0 +1,38 @@
+
+#include <ModbusMaster.h>
+
+// Instancia del objeto ModbusMaster
+ModbusMaster node;
+
+// Función para inicializar la comunicación Modbus
+void setup() {
+  Serial.begin(9600);
+  // Configura el puerto RS485
+  Serial2.begin(9600, SERIAL_8N1, 16, 17); // RX, TX
+  node.begin(1, Serial2); // Dirección del esclavo Modbus
+}
+
+void loop() {
+  uint8_t result;
+  uint16_t data[6];
+
+  // Escanea las direcciones de registro
+  for (uint16_t address = 0; address < 2000; address++) {
+    result = node.readHoldingRegisters(address, 1);
+    if (result == node.ku8MBSuccess) {
+      Serial.print("Dirección: ");
+      Serial.print(address);
+      Serial.print(" - Valor: ");
+      Serial.println(node.getResponseBuffer(0));
+    } /*else {
+      Serial.print("Error en la dirección: ");
+      Serial.print(address);
+      Serial.print(" - Código de error: ");
+      Serial.println(result);
+    }*/
+  }
+
+  Serial.print("Escaneo terminado\n");
+
+  delay(1000); // Espera 1 segundo antes de escanear nuevamente
+}
