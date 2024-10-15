@@ -7,7 +7,7 @@ ModbusMaster node;
 void setup() {
   Serial.begin(9600);
   // Configura el puerto RS485
-  Serial2.begin(9600, SERIAL_8N1, 3, 1); // RX, TX
+  Serial2.begin(9600, SERIAL_8N1, 16, 17); // RX, TX
   node.begin(1, Serial2); // Dirección del esclavo Modbus
 }
 
