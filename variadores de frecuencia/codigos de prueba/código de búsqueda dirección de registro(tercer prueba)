@@ -1,3 +1,4 @@
+
 #include <ModbusMaster.h>
 
 // Instancia del objeto ModbusMaster
@@ -16,20 +17,22 @@ void loop() {
   uint16_t data[6];
 
   // Escanea las direcciones de registro
-  for (uint16_t address = 0; address < 100; address++) {
+  for (uint16_t address = 0; address < 2000; address++) {
     result = node.readHoldingRegisters(address, 1);
     if (result == node.ku8MBSuccess) {
       Serial.print("Dirección: ");
       Serial.print(address);
       Serial.print(" - Valor: ");
       Serial.println(node.getResponseBuffer(0));
-    } else {
+    } /*else {
       Serial.print("Error en la dirección: ");
       Serial.print(address);
       Serial.print(" - Código de error: ");
       Serial.println(result);
-    }
+    }*/
   }
+
+  Serial.print("Escaneo terminado\n");
 
   delay(1000); // Espera 1 segundo antes de escanear nuevamente
 }

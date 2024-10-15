@@ -1,0 +1,57 @@
+#include <ModbusMaster.h>
+
+// Crear una instancia del objeto Modbus
+ModbusMaster node;
+
+// Pines de control RS485 (DE/RE)
+#define RS485_RE_DE 4
+
+void preTransmission() {
+  digitalWrite(RS485_RE_DE, HIGH);  // Modo transmisión
+}
+
+void postTransmission() {
+  digitalWrite(RS485_RE_DE, LOW);   // Modo recepción
+}
+
+void setup() {
+  // Configuración de pines
+  pinMode(RS485_RE_DE, OUTPUT);
+  digitalWrite(RS485_RE_DE, LOW);   // Empezar en modo recepción
+
+  // Iniciar comunicación serial
+  Serial.begin(115200);    // Para comunicación con el monitor serial
+  Serial2.begin(9600, SERIAL_8N1, 16, 17);  // Comunicación con el variador (RX=GPIO16, TX=GPIO17)
+
+  // Configurar Modbus
+  node.begin(1, Serial2);  // Dirección del variador: 1
+  node.preTransmission(preTransmission);
+  node.postTransmission(postTransmission);
+}
+
+void loop() {
+  uint8_t result;
+  uint16_t data;
+
+  // Prueba con las direcciones válidas (768 a 1023)
+  for (uint16_t address = 768; address <= 1023; address++) {
+    result = node.readHoldingRegisters(address, 1);
+
+    if (result == node.ku8MBSuccess) {
+      data = node.getResponseBuffer(0);
+      Serial.print("Registro leído en dirección 0x");
+      Serial.print(address, HEX);
+      Serial.print(": ");
+      Serial.println(data);
+    } else {
+      Serial.print("Error en la comunicación en dirección 0x");
+      Serial.print(address, HEX);
+      Serial.print(". Código: ");
+      Serial.println(result);
+    }
+
+    delay(1000);  // Esperar 1 segundo antes del próximo intento
+  }
+
+  delay(5000);  // Esperar 5 segundos antes de escanear nuevamente
+}
