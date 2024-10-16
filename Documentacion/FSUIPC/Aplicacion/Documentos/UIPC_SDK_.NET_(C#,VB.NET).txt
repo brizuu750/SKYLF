@@ -1,0 +1,5 @@
+Developers using .NET languages (C#, VB.NET etc) can connect to FSUIPC using a .NET library distributed on NuGet.
+
+For details of how to install and use the library, please see this post in the FSUIPC Support Forum:
+
+https://forum.simflight.com/topic/85040-fsuipc-client-dll-for-net-version-3-released/
