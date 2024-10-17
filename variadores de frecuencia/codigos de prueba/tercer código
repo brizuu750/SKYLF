@@ -2,7 +2,7 @@
 
 // Configuración de la conexión RS485
 #define TX_PIN 17  // Pin para transmisión
-#define RX_PIN 26  // Pin para recepción
+#define RX_PIN 16  // Pin para recepción
 #define DE_PIN 4   // Pin para control de transmisión (DE)
 #define RE_PIN 2   // Pin para control de recepción (RE)
 
