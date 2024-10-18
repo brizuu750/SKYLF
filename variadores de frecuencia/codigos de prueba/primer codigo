@@ -5,7 +5,7 @@
 #define DE 4
 
 // Configuración del puerto SoftwareSerial
-SoftwareSerial mod(26, 27); // RX, TX
+SoftwareSerial mod(16, 27); // RX, TX
 
 void setup() {
   Serial.begin(115200);
