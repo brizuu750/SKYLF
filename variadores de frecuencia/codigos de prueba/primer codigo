@@ -2,7 +2,7 @@
 
 // Definición de pines para RE y DE
 #define RE 2
-#define DE 33
+#define DE 4
 
 // Configuración del puerto SoftwareSerial
 SoftwareSerial mod(26, 27); // RX, TX
