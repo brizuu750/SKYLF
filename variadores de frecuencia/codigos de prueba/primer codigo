@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 
 // Definición de pines para RE y DE
-#define RE 32
+#define RE 2
 #define DE 33
 
 // Configuración del puerto SoftwareSerial
