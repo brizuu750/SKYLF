@@ -21,7 +21,7 @@ void setup() {
 
   // Iniciar comunicación serial
   Serial.begin(115200);    // Para comunicación con el monitor serial
-  Serial2.begin(9600, SERIAL_8N1, 16, 17);  // Comunicación con el variador (RX=GPIO16, TX=GPIO1)
+  Serial2.begin(9600, SERIAL_8N1, 16, 17);  // Comunicación con el variador (RX=GPIO16, TX=GPIO17)
 
   // Configurar Modbus
   node.begin(1, Serial2);  // Dirección del variador: 1
