@@ -1,11 +1,11 @@
 #include <SoftwareSerial.h>
 
 // Definición de pines para RE y DE
-#define RE 32
-#define DE 33
+#define RE 2
+#define DE 4
 
 // Configuración del puerto SoftwareSerial
-SoftwareSerial mod(26, 27); // RX, TX
+SoftwareSerial mod(16, 17); // RX, TX
 
 void setup() {
   Serial.begin(115200);
