@@ -1,4 +1,4 @@
-﻿using Microsoft.FlightSimulator.SimConnect;
+using Microsoft.FlightSimulator.SimConnect;
 using System;
 using System.Runtime.InteropServices;
 
@@ -11,12 +11,9 @@ class BrujulaMagnetica
         try
         {
             simconnect = new SimConnect("SimvarWatcher", IntPtr.Zero, 0x0402, null, 0);
-
             simconnect.OnRecvSimobjectData += Simconnect_OnRecvSimobjectData;
 
             simconnect.AddToDataDefinition(DEFINITIONS.Struct1, "MAGNETIC COMPASS", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
-            simconnect.AddToDataDefinition(DEFINITIONS.Struct1, "INDUCTOR COMPASS PERCENT DEVIATION", "percent", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
-            simconnect.AddToDataDefinition(DEFINITIONS.Struct1, "INDUCTOR COMPASS HEADING REF", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
 
             simconnect.RegisterDataDefineStruct<Struct1>(DEFINITIONS.Struct1);
 
@@ -24,16 +21,37 @@ class BrujulaMagnetica
         }
         catch (COMException ex)
         {
-            Console.WriteLine("Error: " + ex.Message);
+            Console.WriteLine("Error al conectar SimConnect en BrujulaMagnetica: " + ex.Message);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error inesperado en BrujulaMagnetica: " + ex.Message);
+        }
+    }
+
+    public void ReceiveMessage()
+    {
+        try
+        {
+            simconnect?.ReceiveMessage();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error al recibir mensaje en BrujulaMagnetica: " + ex.Message);
         }
     }
 
     private void Simconnect_OnRecvSimobjectData(SimConnect sender, SIMCONNECT_RECV_SIMOBJECT_DATA data)
     {
-        var compassData = (Struct1)data.dwData[0];
-        Console.WriteLine($"Magnetic Compass: {compassData.MagneticCompass} grados");
-        Console.WriteLine($"Inductor Compass Percent Deviation: {compassData.InductorCompassPercentDeviation}%");
-        Console.WriteLine($"Inductor Compass Heading Ref: {compassData.InductorCompassHeadingRef} grados");
+        try
+        {
+            var compassData = (Struct1)data.dwData[0];
+            Console.WriteLine($"Magnetic Compass: {compassData.MagneticCompass} grados");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error al procesar datos de BrujulaMagnetica: " + ex.Message);
+        }
     }
 
     enum DATA_REQUESTS { REQUEST_1 }
@@ -43,7 +61,5 @@ class BrujulaMagnetica
     struct Struct1
     {
         public double MagneticCompass;
-        public double InductorCompassPercentDeviation;
-        public double InductorCompassHeadingRef;
     }
 }
