@@ -11,12 +11,10 @@ class HorizonteArtificial
         try
         {
             simconnect = new SimConnect("SimvarWatcher", IntPtr.Zero, 0x0402, null, 0);
-
             simconnect.OnRecvSimobjectData += Simconnect_OnRecvSimobjectData;
 
             simconnect.AddToDataDefinition(DEFINITIONS.Struct1, "ATTITUDE INDICATOR PITCH DEGREES", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
             simconnect.AddToDataDefinition(DEFINITIONS.Struct1, "ATTITUDE INDICATOR BANK DEGREES", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
-            simconnect.AddToDataDefinition(DEFINITIONS.Struct1, "ATTITUDE BARS POSITION", "position", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
 
             simconnect.RegisterDataDefineStruct<Struct1>(DEFINITIONS.Struct1);
 
@@ -24,16 +22,38 @@ class HorizonteArtificial
         }
         catch (COMException ex)
         {
-            Console.WriteLine("Error: " + ex.Message);
+            Console.WriteLine("Error al conectar SimConnect en HorizonteArtificial: " + ex.Message);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error inesperado en HorizonteArtificial: " + ex.Message);
+        }
+    }
+
+    public void ReceiveMessage()
+    {
+        try
+        {
+            simconnect?.ReceiveMessage();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error al recibir mensaje en HorizonteArtificial: " + ex.Message);
         }
     }
 
     private void Simconnect_OnRecvSimobjectData(SimConnect sender, SIMCONNECT_RECV_SIMOBJECT_DATA data)
     {
-        var attitudeData = (Struct1)data.dwData[0];
-        Console.WriteLine($"Pitch: {attitudeData.PitchDegrees} grados");
-        Console.WriteLine($"Bank: {attitudeData.BankDegrees} grados");
-        Console.WriteLine($"Bars Position: {attitudeData.BarsPosition}");
+        try
+        {
+            var attitudeData = (Struct1)data.dwData[0];
+            Console.WriteLine($"Pitch: {attitudeData.PitchDegrees} grados");
+            Console.WriteLine($"Bank: {attitudeData.BankDegrees} grados");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error al procesar datos del HorizonteArtificial: " + ex.Message);
+        }
     }
 
     enum DATA_REQUESTS { REQUEST_1 }
@@ -44,6 +64,6 @@ class HorizonteArtificial
     {
         public double PitchDegrees;
         public double BankDegrees;
-        public double BarsPosition;
     }
 }
+
