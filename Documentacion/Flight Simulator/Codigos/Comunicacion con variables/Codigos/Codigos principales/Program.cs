@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 
 class Program
 {
-    private static SimConnect simconnect = default!;
     private const int WM_USER_SIMCONNECT = 0x0402;
 
     static void Main(string[] args)
@@ -13,24 +12,57 @@ class Program
         Velocimetro velocimetro = new Velocimetro();
         Variometro variometro = new Variometro();
         HorizonteArtificial horizonteartificial = new HorizonteArtificial();
-        CoordinadorDeGiro coordinadordegiro = new CoordinadorDeGiro();
-        IndicadorLOC indicadorloc = new IndicadorLOC();
-        IndicadorVor_GS indicadorvor_gs = new IndicadorVor_GS();
-        BrujulaMagnetica brujulamagnetica = new BrujulaMagnetica();
+        CoordinadorDeGiro coordinadorDeGiro = new CoordinadorDeGiro();
+        BrujulaMagnetica brujulaMagnetica = new BrujulaMagnetica();
 
-        altimetro.ConectarSimConnect();
-        velocimetro.ConectarSimConnect();
-        variometro.ConectarSimConnect();
-        horizonteartificial.ConectarSimConnect();
-        coordinadordegiro.ConectarSimConnect();
-        indicadorloc.ConectarSimConnect();
-        indicadorvor_gs.ConectarSimConnect();
-        brujulamagnetica.ConectarSimConnect();
+        IndicadorVor_GS indicadorVor_GS = new IndicadorVor_GS();
+        IndicadorADF indicadorADF = new IndicadorADF();
+        IndicadorLOC indicadorLOC = new IndicadorLOC();
+
+        Aceleraciones_Rotaciones_Velocidades aceleraciones_Rotaciones_Velocidades = new Aceleraciones_Rotaciones_Velocidades();
+
+        try
+        {
+            altimetro.ConectarSimConnect();
+            velocimetro.ConectarSimConnect();
+            variometro.ConectarSimConnect();
+            horizonteartificial.ConectarSimConnect();
+            coordinadorDeGiro.ConectarSimConnect();
+            brujulaMagnetica.ConectarSimConnect();
+
+            indicadorVor_GS.ConectarSimConnect();
+            indicadorADF.ConectarSimConnect();
+            indicadorLOC.ConectarSimConnect();
+
+            aceleraciones_Rotaciones_Velocidades.ConectarSimConnect();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error durante la inicialización: " + ex.Message);
+        }
 
         // Bucle principal
         while (true)
         {
-            simconnect.ReceiveMessage();
+            try
+            {
+                altimetro.ReceiveMessage();
+                velocimetro.ReceiveMessage();
+                variometro.ReceiveMessage();
+                horizonteartificial.ReceiveMessage();
+                coordinadorDeGiro.ReceiveMessage();
+                brujulaMagnetica.ReceiveMessage();
+
+                indicadorVor_GS.ReceiveMessage();
+                indicadorADF.ReceiveMessage();
+                indicadorLOC.ReceiveMessage();
+
+                aceleraciones_Rotaciones_Velocidades.ReceiveMessage();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error durante la recepción del mensaje: " + ex.Message);
+            }
         }
     }
 }
