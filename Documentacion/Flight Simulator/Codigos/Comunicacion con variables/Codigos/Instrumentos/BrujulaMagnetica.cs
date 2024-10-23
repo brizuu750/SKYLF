@@ -26,11 +26,11 @@ class BrujulaMagnetica //la clase que va a usarse en el codigo, el altimetro en 
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error inesperado en BrujulaMagnetica: " + ex.Message); //mensaje en caso de error en el altimetro
+            Console.WriteLine("Error inesperado en BrujulaMagnetica: " + ex.Message); //mensaje en caso de error en la burjula magnetica
         }
     }
 
-    public void ReceiveMessage() //funcion para recibir los datos/mensajes del MFS
+    public void ReceiveMessage() //funcion para recibir los datos/mensajes del api
     {
         try
         {
