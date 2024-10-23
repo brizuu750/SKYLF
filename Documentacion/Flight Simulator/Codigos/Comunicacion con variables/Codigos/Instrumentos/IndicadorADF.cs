@@ -14,16 +14,14 @@ class IndicadorADF //la clase que va a usarse en el codigo, el horizonte artific
         {
             simconnect = new SimConnect("ADF Instrument", IntPtr.Zero, 0x0402, null, 0); //crea una nueva conexión con simconnect para comunicarse con el simulador de vuelo e indica que tipo de mensajes se manejara
             simconnect.OnRecvSimobjectData += Simconnect_OnRecvSimobjectData;
-
-            // ADF Active Frequency
+   
             simconnect.AddToDataDefinition(DEFINITIONS.ADFData, "ADF ACTIVE FREQUENCY:1", "Hz", SIMCONNECT_DATATYPE.INT32, 0.0f, SimConnect.SIMCONNECT_UNUSED); //le dice al simulador que queremos recibir la variable active frequency
-            // ADF Radial Magnetic
             simconnect.AddToDataDefinition(DEFINITIONS.ADFData, "ADF RADIAL MAG:1", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED); //le dice al simulador que queremos recibir la variable radialmag
 
-            // Register the ADF structure
+            // registre la estructura del ADF
             simconnect.RegisterDataDefineStruct<ADFData>(DEFINITIONS.ADFData);
 
-            // Request data on the ADF from the simulator
+            // Solicitar datos del ADF desde el simulador
             simconnect.RequestDataOnSimObject(DATA_REQUESTS.REQUEST_1, DEFINITIONS.ADFData, SimConnect.SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_PERIOD.SECOND, SIMCONNECT_DATA_REQUEST_FLAG.DEFAULT, 0, 0, 0);
         }
         catch (COMException ex)
