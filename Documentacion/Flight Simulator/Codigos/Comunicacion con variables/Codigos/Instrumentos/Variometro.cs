@@ -17,9 +17,9 @@ class Variometro //la clase que va a usarse en el codigo, el variometro en este 
 
             simconnect.AddToDataDefinition(DEFINITIONS.Struct1, "VERTICAL SPEED", "feet per minute", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);//le dice al simulador que queremos recibir la variable verticalSpeedData.VerticalSpeed
 
-            simconnect.RegisterDataDefineStruct<Struct1>(DEFINITIONS.Struct1);
+            simconnect.RegisterDataDefineStruct<Struct1>(DEFINITIONS.Struct1); // Registra la estructura del variometro
 
-            simconnect.RequestDataOnSimObject(DATA_REQUESTS.REQUEST_1, DEFINITIONS.Struct1, SimConnect.SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_PERIOD.SECOND, SIMCONNECT_DATA_REQUEST_FLAG.DEFAULT, 0, 0, 0); 
+            simconnect.RequestDataOnSimObject(DATA_REQUESTS.REQUEST_1, DEFINITIONS.Struct1, SimConnect.SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_PERIOD.SECOND, SIMCONNECT_DATA_REQUEST_FLAG.DEFAULT, 0, 0, 0);   // Solicitar datos del variometro desde el simulador
         }
         catch (COMException ex)
         {
