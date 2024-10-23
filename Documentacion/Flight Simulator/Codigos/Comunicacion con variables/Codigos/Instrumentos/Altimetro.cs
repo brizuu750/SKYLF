@@ -32,7 +32,7 @@ class Altimetro //la clase que va a usarse en el codigo, el altimetro en este ca
         }
     }
 
-    public void ReceiveMessage() //funcion para recibir los datos/mensajes del MFS
+    public void ReceiveMessage() //funcion para recibir los datos/mensajes del api
     {
         try
         {
