@@ -51,7 +51,7 @@ class BrujulaMagnetica //la clase que va a usarse en el codigo, el altimetro en 
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error al procesar datos de BrujulaMagnetica: " + ex.Message); //en caso de error al recibir los datos de la variable
+            Console.WriteLine("Error al procesar datos de BrujulaMagnetica: " + ex.Message); //en caso de error al procesar los datos de la variable
         }
     }
 
