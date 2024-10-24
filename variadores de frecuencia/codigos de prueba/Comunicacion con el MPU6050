@@ -1,0 +1,34 @@
+#include <Wire.h>
+#include <MPU6050.h>
+
+MPU6050 mpu;
+
+void setup() {
+  Wire.begin(); // Iniciar I2C
+  Serial.begin(115200); // Iniciar la comunicación serial
+  
+  Serial.println("Iniciando MPU6050...");
+
+  if (!mpu.begin()) {
+    Serial.println("MPU6050 no encontrado. Verifique la conexión.");
+    while (1);
+  }
+  
+  Serial.println("MPU6050 iniciado correctamente.");
+}
+
+void loop() {
+  mpu.update();
+  
+  // Imprimir valores de acelerómetro
+  Serial.print("Aceleración X: "); Serial.println(mpu.getAccX());
+  Serial.print("Aceleración Y: "); Serial.println(mpu.getAccY());
+  Serial.print("Aceleración Z: "); Serial.println(mpu.getAccZ());
+  
+  // Imprimir valores de giroscopio
+  Serial.print("Giroscopio X: "); Serial.println(mpu.getGyroX());
+  Serial.print("Giroscopio Y: "); Serial.println(mpu.getGyroY());
+  Serial.print("Giroscopio Z: "); Serial.println(mpu.getGyroZ());
+  
+  delay(500); // Espera medio segundo
+}
