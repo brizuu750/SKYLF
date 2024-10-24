@@ -55,6 +55,23 @@ Lucas Meabrio y Santiago Rubio: Instalacion y prueba del yoke y pedestal el el f
     • Leandro Flores, Esteban Lautaro: Avanzaron el la carpets tecnica, hicieron la base del informe descriptivo, y hicieron un codigo de prueba para la comunicacion entre el mpu6050 y el esp32.
     • Meabrio Lucas: Empezar la documentacion de las variables del garmin g1000
     • Santiago Rubio: Hacer codigo para que extraiga las variables necesarias para saber sobre las velocidades, aceleraciones, rotaciones, el Yaw, pitch y roll/bank del avion. Luego mejorar el "program.cs" para verificar que no haya errores de comunicacion con ese codigo.
+21/10
+    • Agustin Brizuela y Jofiel Godoy: Averiguaron sobre como sería la distribución de la cabina de instrumentos para el Panel de control.
+    • Lautaro Esteban: Conecto la gnd del variador para hacer pruebas y empezo un  nuevo codigo para sacar todas las direcciones del variador.
+22/10
+    • Agustin Brizuela y Jofiel Godoy: Probamos un nuevo método de conexión del FS2020 hacia el panel mediante la herramienta MobiFLight, luego hicimos testeo con la aeronave cessna 172 dentro del FS2020 configurando la tecla del Tubo pitot con la tecla conectada a la Arduino UNO y configurando el MobiFlight mediante el FSUIPC7 para comunicar a los pines de la Arduino UNO. Este testeo resultó bien ya que al accionar la palanca asignada al Tubo Pitot, en el FS2020 se mostraba en tiempo simultáneo que se mueve la palanca.
+    •  Leiva santiago y Esteban Lautaro: Terminaron y modificaron el codigo para extraer toda las direcciones del variador y empezaron a extraerlas. Ademas continuaron con el informe descriptivo.
+    • Flores Leandro: Empezo a hacer el banner
+    • Lucas Meabrio: Empezo con el informe descriptivo de las variables para la simulacion del vuelo. Actualizo los codigos del altimetro, de la brujula magnetica, del coordinador de giro y el velocimetro
+    
+23/!0
+- Agustin Brizuela y Jofiel Godoy: Cortamos una madera con las medidas ideales para el panel del Cessna 172, determinando como se ubicarían exactamente las palancas y llave selectora rotativa. Luego del colegio hubo una examinación sobre la cabina del Cessna 152. 
+- Lucas Meabrio: Resubio actualizados los codigos que utilizan el horizonte artificial, el indicador de ADF, el indicadro Vor-GS, el indicador del LOC y el variometro
+
+
+24/10
+- Agustín Brizuela y Jofiel Godoy: llegamos a la conlusión de que el Cessna 172 G1000 no es la mejor opción para la cabina del simulador, ya que incorpora el Garmin G1000, y ese instrumento nos llevaría mucho más del presupuesto que nos proporcionó el colegio. Entonces llegamos a la conclusión de que es mejor configurable y adaptable la aeronave cessna 152, debido a que esta no incorpora garmin G1000 y es una aeronave que contiene todas las variables que probamos y es en su similitud muy parecido al Cessna 172 Skyhawk del que antes teníamos definidido por lo que nos parece una excelente opción.
+r
 
 
 
