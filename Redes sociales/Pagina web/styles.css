@@ -44,7 +44,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #000000;
     text-align: center;
 }
 
@@ -253,7 +253,7 @@ footer p {
     }
 
     .team-container {
-        grid-template-columns: 1fr; /* Coloca una columna para pantallas pequeñas */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
