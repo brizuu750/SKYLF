@@ -25,8 +25,8 @@
     <section id="home">
         <div class="banner">
             <div class="banner-content">
-                <h1>Simulador de Vuelo Realista</h1>
-                <p>Proyecto del Año 2024 | SKYFLY</p>
+                <h1>Simulador de Vuelo "SKYFLY"</h1>
+                <p>Proyecto de septimo | Arduino UNO | ESP32 | Flight Simulator 2020</p>
                 <div class="cta-buttons">
                     <a href="#project" class="btn-primary">Ver Más</a>
                     <a href="https://github.com/brizuu750/SKYLF" target="_blank" class="btn-secondary">GitHub</a>
@@ -45,39 +45,39 @@
                 <p>Programación y comunicación de los variadores de frecuencia con los motores, MPU6050 y ESP32.</p>
             </div>
             <div class="team-member">
-                <img src="images/flores.jpg" alt="Flores Leandro">
-                <h4>Flores Leandro</h4>
-                <p>Programación y comunicación de los variadores de frecuencia con los motores, MPU6050 y ESP32.</p>
-            </div>
-            <div class="team-member">
                 <img src="images/leiva.jpg" alt="Leiva Santiago">
-                <h4>Leiva Santiago</h4>
-                <p>Programación y comunicación de los variadores de frecuencia con los motores, MPU6050 y ESP32.</p>
+                <h4>Santiago Leiva</h4>
+                <p>Programación y control de los variadores de frecuencia utilizando el ESP32.</p>
             </div>
             <div class="team-member">
-                <img src="images/godoy.jpg" alt="Godoy Baldovino Marco">
-                <h4>Godoy Baldovino Marco</h4>
-                <p>Programación y armado del panel de instrumentos del simulador.</p>
+                <img src="images/flores.jpg" alt="Leandro Flores">
+                <h4>Leandro Flores</h4>
+                <p>Encargado de la integración de variadores de frecuencia con motores y software.</p>
             </div>
             <div class="team-member">
-                <img src="images/brizuela.jpg" alt="Brizuela Agustin">
-                <h4>Brizuela Agustin</h4>
-                <p>Programación y armado del panel de instrumentos del simulador.</p>
+                <img src="images/godoy.jpg" alt="Marco Godoy Baldovino">
+                <h4>Marco Godoy Baldovino</h4>
+                <p>Desarrollo del panel de control del simulador y su integración con Flight Simulator 2020.</p>
             </div>
             <div class="team-member">
-                <img src="images/rubio.jpg" alt="Rubio Santiago">
-                <h4>Rubio Santiago</h4>
-                <p>Descarga y programación de variables del simulador de vuelo para comunicar los instrumentos.</p>
+                <img src="images/brizuela.jpg" alt="Agustin Brizuela">
+                <h4>Agustin Brizuela</h4>
+                <p>Desarrollo y armado del panel de control para el simulador.</p>
             </div>
             <div class="team-member">
-                <img src="images/meabrio.jpg" alt="Meabrio Lucas">
-                <h4>Meabrio Lucas</h4>
-                <p>Descarga y programación de variables del simulador de vuelo para comunicar los instrumentos.</p>
+                <img src="images/rubio.jpg" alt="Santiago Rubio">
+                <h4>Santiago Rubio</h4>
+                <p>Búsqueda e implementación de variables del Flight Simulator 2020.</p>
             </div>
             <div class="team-member">
-                <img src="images/romocordoba.jpg" alt="Romocordoba Emiliano">
-                <h4>Romocordoba Emiliano</h4>
-                <p>Mantenimiento y mejoras en la estructura física del simulador.</p>
+                <img src="images/meabrio.jpg" alt="Lucas Meabrio">
+                <h4>Lucas Meabrio</h4>
+                <p>Implementación y configuración de las variables del simulador para integración con los instrumentos.</p>
+            </div>
+            <div class="team-member">
+                <img src="images/romocordoba.jpg" alt="Emiliano Romocordoba">
+                <h4>Emiliano Romocordoba</h4>
+                <p>Mantenimiento de la estructura física del simulador.</p>
             </div>
         </div>
 
@@ -102,23 +102,23 @@
                     <td>100 horas</td>
                 </tr>
                 <tr>
-                    <td>Godoy Baldovino Marco</td>
+                    <td>Marco Godoy Baldovino</td>
                     <td>90 horas</td>
                 </tr>
                 <tr>
-                    <td>Brizuela Agustin</td>
+                    <td>Agustin Brizuela</td>
                     <td>90 horas</td>
                 </tr>
                 <tr>
-                    <td>Rubio Santiago</td>
+                    <td>Santiago Rubio</td>
                     <td>80 horas</td>
                 </tr>
                 <tr>
-                    <td>Meabrio Lucas</td>
+                    <td>Lucas Meabrio</td>
                     <td>80 horas</td>
                 </tr>
                 <tr>
-                    <td>Romocordoba Emiliano</td>
+                    <td>Emiliano Romocordoba</td>
                     <td>70 horas</td>
                 </tr>
             </table>
@@ -129,8 +129,13 @@
     <section id="project" class="section-padding">
         <h2>El Proyecto</h2>
         <div class="project-details">
-            <p><strong>Objetivo:</strong> Replicar maniobras y sistemas de vuelo de un avión real mediante una estructura móvil controlada por variadores de frecuencia y un panel de instrumentos físico gestionado por un Arduino Uno.</p>
-            <p><strong>Segmento Destino y Alcance:</strong> Destinado a entusiastas de la simulación de vuelo, estudiantes de ingeniería y aviación. Con potencial de ser utilizado en cursos educativos sobre control de sistemas embebidos y mecánica de simulación.</p>
+            <p><strong>Objetivo:</strong> Desarrollar un simulador de vuelo realista basado en la interacción de hardware y software, utilizando variadores de frecuencia, un ESP32, y paneles de control físico conectados al Flight Simulator 2020.</p>
+            <p><strong>Descripción Técnica:</strong></p>
+            <p>Para la comunicación del variador de frecuencias (modelo GK500-2T1.5B), utilizamos un ESP32, un módulo RS485 y la computadora, en la cual ejecutamos el programa a través de Arduino IDE. El MPU6050 también está presente para la detección de movimiento y orientación. A continuación, se detalla la conexión de los pines:</p>
+            <ul>
+                <li>Del RS485, los pines GND y VCC están conectados a una fuente de 5V, A y B van al variador de frecuencias, RE está conectado al GPIO4 del ESP32, DE al GPIO2, RO al GPIO16 (RX), y DI al GPIO17 (TX).</li>
+                <li>Del MPU6050, los pines GND y VCC van conectados al ESP32, el SCL al GPIO22 y el SDA al GPIO21. La comunicación se realiza a 9600 baudios.</li>
+            </ul>
         </div>
         <div class="project-image">
             <img src="images/project_overview.jpg" alt="Vista del Proyecto">
@@ -141,34 +146,28 @@
     <section id="features" class="section-padding">
         <h2>Características</h2>
 
-        <!-- Software Feature -->
+        <!-- Panel de Control -->
         <div class="feature">
-            <h3>Software</h3>
-            <p>El simulador utiliza el <strong>Arduino IDE</strong> para la programación del <strong>Arduino Uno</strong>, que se encarga de la gestión de los switches del panel y la comunicación con los variadores de frecuencia y otros periféricos. Además, el software permite una sincronización en tiempo real entre los movimientos del simulador y el Flight Simulator 2020.</p>
-            <p><strong>Lenguajes Utilizados:</strong> C/C++ para la programación del Arduino Uno, lo que proporciona un control eficiente y flexible sobre el hardware. Esto permite un manejo preciso de los motores, los instrumentos y la retroalimentación de los sensores.</p>
-            <p>El software también incluye una implementación de algoritmos de control que optimizan la estabilidad y precisión de los movimientos de la estructura, mejorando la experiencia de vuelo realista.</p>
+            <h3>Panel de Control y Visualización</h3>
+            <p>El simulador cuenta con un Panel de Control que se comunica con el Flight Simulator 2020 mediante hardware físico (interruptores, palancas, y botones). Además, hay un Panel de Visualización que muestra los instrumentos reales del vuelo en una pantalla de 18 pulgadas.</p>
         </div>
 
-        <!-- Hardware Feature -->
+        <!-- Panel de Instrumentos -->
         <div class="feature">
-            <h3>Hardware</h3>
-            <p>El hardware del simulador está compuesto principalmente por un <strong>Arduino Uno</strong>, variadores de frecuencia modelo <strong>GK500-2T1.5B</strong>, y un sensor <strong>MPU6050</strong> para la detección de movimiento. Estos componentes están integrados de manera precisa para permitir el control de la estructura móvil y los sistemas del avión.</p>
-            <p>El <strong>MPU6050</strong> proporciona datos en tiempo real sobre la inclinación y aceleración de la estructura, lo que permite ajustar el movimiento de los motores a través de los variadores de frecuencia, simulando maniobras de vuelo en dos ejes: cabeceo y alabeo.</p>
-            <p>El sistema eléctrico utiliza una fuente de alimentación dedicada para los motores y otra para el Arduino Uno y sus periféricos, asegurando una operación estable y sin interferencias.</p>
+            <h3>Panel de Instrumentos</h3>
+            <p>El Panel de Instrumentos incluye 7 interruptores de palanca, 8 pulsadores, una llave selectora rotativa de 6 estados, y 4 interruptores. Todos estos componentes están programados para interactuar con el simulador a través de MobiFlight y dos Arduino UNO, los cuales ejecutan acciones específicas dentro del Flight Simulator 2020. Los interruptores se utilizan para controlar diversos sistemas del avión, como la bomba de combustible, luces (BCN, LAND, TAXI, NAV, STRB), el tubo Pitot, y los buses eléctricos del avión.</p>
         </div>
 
-        <!-- Electrónica Feature -->
+        <!-- Variables del Flight Simulator -->
         <div class="feature">
-            <h3>Electrónica</h3>
-            <p>La electrónica del proyecto se centra en la interacción precisa entre los componentes y el control de los motores. Los variadores de frecuencia están configurados para responder a las órdenes del Arduino Uno, ajustando la velocidad y dirección de los motores según las señales del sensor <strong>MPU6050</strong>.</p>
-            <p>La conexión entre los variadores y el Arduino se realiza mediante el protocolo <strong>RS485</strong>, que es altamente confiable para la transmisión de datos en tiempo real, garantizando que el simulador responda con precisión a las maniobras del piloto.</p>
+            <h3>Variables del Flight Simulator 2020</h3>
+            <p>La búsqueda de variables en Flight Simulator 2020 es un proceso complejo pero crucial. Las variables permiten que el simulador se comunique correctamente con los instrumentos físicos y los motores. Los programadores Santiago Rubio y Lucas Meabrio están encargados de esta tarea, utilizando herramientas como MobiFlight y FSUIPC7.</p>
         </div>
 
-        <!-- Estructura Física Feature -->
+        <!-- Estructura Física -->
         <div class="feature">
             <h3>Estructura Física</h3>
-            <p>La estructura física del simulador está diseñada para ofrecer estabilidad y ligereza, utilizando materiales como <strong>aluminio</strong> y <strong>acero</strong>. La plataforma móvil está configurada para moverse en dos ejes, lo que permite simular inclinaciones y maniobras de vuelo con un alto grado de precisión.</p>
-            <p>La estructura está equipada con amortiguadores que suavizan las transiciones de los movimientos bruscos, como turbulencias o cambios de altitud, mejorando la sensación de realismo durante el vuelo.</p>
+            <p>La estructura del simulador está diseñada y calculada de manera que los movimientos no afecten a la estructura ni nada dentro de ella. Todos los componentes están bien organizados y montados para proporcionar realismo, y el panel está pintado en negro con etiquetas en blanco que replican la cabina del avión Cessna 172.</p>
         </div>
     </section>
 
