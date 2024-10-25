@@ -13,13 +13,14 @@ body {
 
 header {
     background: #003366;
-    color: #ffffff;
+    color: #fff;
     padding: 1rem 0;
     text-align: center;
 }
 
 .nav-links {
     list-style-type: none;
+    padding: 0;
 }
 
 .nav-links li {
@@ -43,7 +44,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000000;
+    color: #fff;
     text-align: center;
 }
 
@@ -225,4 +226,99 @@ footer {
 
 footer p {
     margin-top: 10px;
+}
+
+/* --------------- Media Queries (ajustes para pantallas pequeñas) --------------- */
+
+@media (max-width: 768px) {
+    .banner-content {
+        max-width: 90%;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1.2rem;
+    }
+
+    .cta-buttons a {
+        margin: 5px;
+        padding: 8px 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr; /* Coloca una columna para pantallas pequeñas */
+        gap: 15px;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-member h4 {
+        font-size: 1.1rem;
+    }
+
+    .team-member p {
+        font-size: 0.9rem;
+    }
+
+    .team-hours th, .team-hours td {
+        padding: 8px;
+    }
+
+    .feature {
+        padding: 15px;
+    }
+
+    .contact-container {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .cta-buttons a {
+        margin: 5px;
+        padding: 6px 10px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-member h4 {
+        font-size: 1rem;
+    }
+
+    .team-member p {
+        font-size: 0.85rem;
+    }
+
+    .feature h3 {
+        font-size: 1.3rem;
+    }
+
+    .feature p {
+        font-size: 1rem;
+    }
 }
