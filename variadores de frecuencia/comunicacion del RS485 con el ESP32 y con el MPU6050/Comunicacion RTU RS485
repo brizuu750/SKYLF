@@ -1,0 +1,94 @@
+HD48S… series ENGLISH
+RS485 MODBUS-RTU Rev. 1.2 – 25/09/2012
+SETTING THE RS485 COMMUNICATION PARAMETERS OF THE TRANSMITTER WITH A
+STANDARD COMMUNICATION PROGRAM
+Before connecting the transmitter to the RS485 network, an address must be assigned
+and the communication parameters be set, if different from the factory preset.
+The parameters setting is performed as follows:
+• If you have the RS48 cable, install the drivers in the PC.
+• Connect the transmitter to a PC USB port using the cable RS48 (or alternatively
+through another USB/RS485 converter available, ensuring that their drivers are
+installed in the PC).
+• Move the ADDRESS jumper between the sign "ADDRESS" and "N = 0" to select
+the configuration mode (see technical sheet to locate the jumper).
+• Start a communication program such as Hyperterminal, and set the serial
+communication parameters as follows (the instrument is connected to a COM port
+type):
+Baud rate: 115200
+Parity: None
+Data Bits: 8
+Stop Bits: 2
+• Send the serial commands given in the following table to set the RS485 MODBUS
+parameters:
+Command Response Description
+MA nnn & Set RS485 address
+Ranging from 1 to 247
+Preset on 1
+MB n & Set RS485 Baud Rate
+n=0 ⇒ 9600
+n=1 ⇒ 19200
+Preset on 1 ⇒ 19200
+MP n & Set RS485 transmission mode
+n=0 ⇒ 8-N-1 (8 data bits, no parity, 1 stop bit)
+n=1 ⇒ 8-N-2 (8 data bits, no parity, 2 stop bits)
+n=2 ⇒ 8-E-1 (8 data bits, even parity, 1 stop bit)
+n=3 ⇒ 8-E-2 (8 data bits, even parity, 2 stop bits)
+n=4 ⇒ 8-O-1 (8 data bits, odd parity, 1 stop bit)
+n=5 ⇒ 8-O-2 (8 data bits, odd parity, 2 stop bits)
+Preset on 2 ⇒ 8-E-1
+MW n & Set receiving mode after RS485 transmission
+n=0 ⇒ Violates the protocol and gets in listen mode
+immediately after the transmission
+n=1 ⇒ Respects the protocol and waits 3.5 characters
+after the transmission
+Preset on 1 ⇒ Respects the protocol
+- 2 -
+• You can check the parameters setting and read the information of the instrument
+by sending the following serial commands:
+Command Response Description
+G0 Transmitter Model
+G2 Serial number of the transmitter
+G3 Firmware Version
+G4 Firmware Date
+L1 Address Read RS485 address
+L2 Baud Rate
+(0,1)
+Read RS485 Baud Rate
+0 ⇒ 9600
+1 ⇒ 19200
+L3 Tx Mode
+(0,1,2,3,4,5)
+Read RS485 transmission mode
+0 ⇒ 8-N-1
+1 ⇒ 8-N-2
+2 ⇒ 8-E-1
+3 ⇒ 8-E-2
+4 ⇒ 8-O-1
+5 ⇒ 8-O-2
+L4 Rx Mode
+(0,1)
+Read receiving mode after RS485 transmission
+0 ⇒ Violates the protocol and gets in listen mode
+immediately after Tx
+1 ⇒ Respects the protocol and waits 3.5 characters after
+Tx
+P0 & Ping
+• When finished, reposition the ADDRESS jumper between the indications
+"ADDRESS" and "N =" to restore the MODBUS mode.
+READING OF THE MEASURES WITH THE MODBUS-RTU PROTOCOL WHEN THE
+INSTRUMENT IS IN OPERATING CONDITIONS (INSTALLED IN A NETWORK)
+In MODBUS mode, you can read the values measured by the instrument through the
+function code 04h (Read Input Registers). The following table lists the quantities
+available with the appropriate register address:
+Address Quantity Format
+0 Temperature in °C (x10) 16-bit Integer
+1 Temperature in °F (x10) 16 bit Integer
+2 Relative Humidity in % (x10) 16-bit Integer
+3 Dew Point in °C (x10) 16 bit Integer
+4 Dew Point in °F (x10) 16-bit Integer
+5 Status register
+bit 0 = 1 ⇒ temperature measurement error
+bit 1 = 1 ⇒ humidity measurement error
+bit 2 = 1 ⇒ dew point calculation error
+bit 3 = 1 ⇒ configuration data error
+16-bit Integer 
