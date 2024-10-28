@@ -150,3 +150,65 @@ Este simulador está destinado a estudiantes de ingeniería, entusiastas de la a
 
 7. Resultados Conseguido
 Se trabaja en la implementación de la conexión y funcionamiento del panel de control con Flight Simulator 2020. Las pruebas iniciales de los motores todavía está en proceso. El sistema continúa en fase de pruebas y optimización, principalmente en el uso de variables de comunicación para mejorar la precisión de las lecturas y comandos en tiempo real, y también la comunicación con el variador de frecuencias
+
+8. Software
+Diagrama en Bloques: (Incluir el diagrama en bloques de la arquitectura de software, desde el ESP32 hasta Flight Simulator 2020).
+Lenguajes Utilizados:
+C/C++: Programación del ESP32 y Arduino UNO para la comunicación con los variadores de frecuencia.
+C/C++: Programación del Arduino UNO para gestionar los interruptores.
+Capturas de Código y Herramientas:
+Fragmentos de código en Arduino IDE para el control del ESP32 y la programación de los instrumentos con MobiFlight.
+Configuración de FSUIPC7 para la personalización de los instrumentos en pantalla.
+
+Estructuras de Datos:
+
+Las librerías principales usadas en el variador de frecuencias son:
+ModbusMaster: Esta librería permite la comunicación Modbus RTU entre el ESP32 y el variador de frecuencia, facilitando la lectura y escritura de registros Modbus. Es útil para enviar comandos de control y recibir estados o lecturas de dispositivos Modbus.
+MPU6050: Esta librería permite gestionar el sensor MPU6050, que proporciona datos de aceleración y giroscopio, esenciales para el cálculo de orientación y movimientos en el simulador. La comunicación se realiza a través de I2C, y la librería facilita la lectura de los valores en tiempo real.
+
+Variables Globales para Configuración Básica:
+Almacenan parámetros básicos de la comunicación Modbus que se usan en varias partes del código, lo que facilita cambios futuros.
+const uint8_t slaveID = 1; // ID del dispositivo esclavo (variador de frecuencia)
+const uint16_t baudRate = 9600; // Tasa de baudios para la comunicación RS485
+const uint16_t startAddress = 0x301; // Dirección de inicio del registro a leer/escribir
+
+Array para Almacenar Resultados de Lecturas:
+Almacena los datos leídos de diferentes registros Modbus, facilitando la manipulación o el monitoreo de múltiples registros a la vez.
+
+uint16_t modbusData[10]; // Array para almacenar los datos de los registros leídos
+
+Estructura para el Estado de la Comunicación:
+Guarda los códigos de error o el estado de éxito de cada comunicación, lo cual es útil para realizar un diagnóstico.
+
+struct ModbusStatus {
+    bool success;         // Indica si la última comunicación fue exitosa
+    uint8_t errorCode;    // Código de error, si la comunicación falló
+};
+
+ModbusStatus modbusStatus;
+
+Función de Lectura con Retorno de Estado:
+Realiza la lectura de registros y devuelve el estado de la operación, facilitando el manejo de errores.
+
+ModbusStatus readRegister(uint16_t address) {
+    ModbusStatus status;
+    uint8_t result = node.readHoldingRegisters(address, 1);
+    if (result == node.ku8MBSuccess) {
+        modbusData[0] = node.getResponseBuffer(0);
+        status.success = true;
+    } else {
+        status.success = false;
+        status.errorCode = result;
+    }
+    return status;
+}
+
+Array de Direcciones de Registros para Pruebas Automáticas:
+Si se requiere probar varios registros, este array permite iterar sobre ellos y verificar cuáles son válidos.
+
+const uint16_t testAddresses[] = {0x301, 0x302, 0x303, /* otros registros */};
+
+Flags de Control para Optimizar la Ejecución:
+Bandera para controlar el tiempo de espera y evitar retardos innecesarios en la comunicación.
+
+bool timeoutFlag = false;
