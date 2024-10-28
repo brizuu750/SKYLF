@@ -106,3 +106,6 @@ Participaron un total de 8 personas en un promedio de 14 hs semanales durante 28
 10. Electrónica
 11. Estructura
 12. Anexo
+
+1. Introducción
+Este proyecto de Simulador de Vuelo Realista, basado en la cabina del Cessna 152, replica las maniobras y controles de la aeronave mediante la integración de un panel físico de control y un sistema de visualización interactuando con Flight Simulator 2020. Se implementa un circuito de comunicación mediante un Arduino UNO y un ESP32 que permiten gestionar diversos sistemas y enviar comandos a través de variables de comunicación específicas, sincronizando los instrumentos físicos con el simulador virtual. Además, el simulador utiliza un sistema de control de motores con variadores de frecuencia y sensor de movimiento MPU6050 para añadir realismo en el control de vuelo.
