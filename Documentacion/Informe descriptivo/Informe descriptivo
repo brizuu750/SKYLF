@@ -140,3 +140,6 @@ Tasa de Transferencia: La comunicación con el variador de frecuencia se realiza
 Sensor de Movimiento MPU6050: Integrado al ESP32, el MPU6050 detecta la inclinación y aceleración en tiempo real, lo que permite ajustar los movimientos del simulador para reflejar las maniobras de vuelo de manera más precisa. Este sensor es crucial para sincronizar el sistema físico con los cambios en el entorno virtual del Flight Simulator 2020.
 Panel de Visualización de Instrumentos
 Este panel de visualización está diseñado para mostrar los datos de vuelo en una pantalla de 18 pulgadas, reflejando los instrumentos de la aeronave. La comunicación de los datos de vuelo se realiza mediante MobiFlight y FSUIPC7, que gestionan las variables de Flight Simulator 2020. Este diseño permite una representación en tiempo real de los parámetros del simulador, ajustando el diseño para que se asemeje al de un Cessna 152.
+
+4. Segmento Destino y Alcance
+Este simulador está destinado a estudiantes de ingeniería, entusiastas de la aviación y centros de enseñanza técnica que busquen herramientas de formación práctica en sistemas de control, mecánica de vuelo y electrónica aplicada. El proyecto tiene el potencial de ser una plataforma educativa completa en simulación de vuelo.
