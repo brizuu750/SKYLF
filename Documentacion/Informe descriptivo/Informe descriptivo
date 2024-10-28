@@ -113,3 +113,30 @@ Este proyecto de Simulador de Vuelo Realista, basado en la cabina del Cessna 152
 2. Objetivo
 Objetivo General: Construir un simulador de vuelo con una interfaz de usuario realista, que permita experimentar el control de una aeronave tipo Cessna 152 mediante un panel físico conectado a Flight Simulator 2020.
 Objetivo Específico: Integrar un sistema de variadores de frecuencia, Arduino UNO y ESP32, junto con un panel de control que permita al usuario activar sistemas de vuelo, como el control de luces, bomba de combustible y buses aviónicos, replicando el entorno real de un avión en el simulador virtual.
+
+3. Descripción de la Solución
+El simulador incluye dos sistemas principales: un Panel de Control y un Panel de Visualización de Instrumentos, con un esquema de comunicación que integra varios componentes para emular los controles de un avión real.
+Panel de Control
+El Panel de Control cuenta con interruptores de palanca, pulsadores, y una llave selectora rotativa de 6 estados. Este panel físico permite al usuario activar sistemas esenciales de la aeronave en el entorno virtual de Flight Simulator 2020, mediante la integración de MobiFlight y Arduino UNO. Algunos de los sistemas principales controlados por el panel incluyen:
+Bomba de Combustible: Activa una bomba de combustible que permite el cebado inicial del motor.
+Luces (BCN, LAND, TAXI, NAV, STRB): Controla las luces exteriores del avión para el despegue, aterrizaje y condiciones de vuelo específicas.
+Interruptores de Bus Aviónico: Activa los sistemas de navegación y comunicación de la aeronave.
+Tubo Pitot: Controla el calentador del tubo Pitot para evitar el congelamiento.
+Magnetos: Distribuyen corriente eléctrica a las bujías, gestionadas por una llave rotativa de 6 estados.
+El Arduino UNO es el microcontrolador principal del panel de control y se configura mediante MobiFlight para ejecutar comandos específicos en Flight Simulator 2020 según los interruptores activados. Esto asegura que cada acción en el panel tenga un reflejo preciso en el simulador virtual, mejorando la inmersión en el entorno de vuelo.
+Comunicación con el Variador de Frecuencia y Sistema de Control de Movimiento
+Para lograr una experiencia de vuelo más realista, el simulador utiliza un variador de frecuencia GK500-2T1.5B controlado por un ESP32 y un módulo RS485 para gestionar el movimiento de los motores, lo que permite simular inclinaciones en los ejes de cabeceo y alabeo. La configuración del variador de frecuencia y el sistema de comunicación están organizados de la siguiente forma:
+ESP32 y RS485: El ESP32 actúa como el controlador principal para la comunicación con el variador de frecuencia. La conexión se realiza mediante el protocolo RS485, que permite la transmisión de datos en tiempo real para ajustar la velocidad y dirección de los motores, necesarios para las maniobras de vuelo.
+Configuración de Pines del RS485 y ESP32:
+RS485:
+Pines GND y VCC conectados a una fuente de 5V.
+Pines A y B conectados directamente al variador de frecuencia.
+Pin RE conectado al GPIO4 del ESP32, DE al GPIO2, RO al GPIO16 (RX) y DI al GPIO17 (TX).
+MPU6050:
+Pines GND y VCC conectados al ESP32.
+SCL al GPIO22 y SDA al GPIO21.
+
+Tasa de Transferencia: La comunicación con el variador de frecuencia se realiza a una velocidad de 9600 baudios. Esto permite un control preciso y estable de los motores, alineando las respuestas del sistema físico con los comandos generados en el simulador.
+Sensor de Movimiento MPU6050: Integrado al ESP32, el MPU6050 detecta la inclinación y aceleración en tiempo real, lo que permite ajustar los movimientos del simulador para reflejar las maniobras de vuelo de manera más precisa. Este sensor es crucial para sincronizar el sistema físico con los cambios en el entorno virtual del Flight Simulator 2020.
+Panel de Visualización de Instrumentos
+Este panel de visualización está diseñado para mostrar los datos de vuelo en una pantalla de 18 pulgadas, reflejando los instrumentos de la aeronave. La comunicación de los datos de vuelo se realiza mediante MobiFlight y FSUIPC7, que gestionan las variables de Flight Simulator 2020. Este diseño permite una representación en tiempo real de los parámetros del simulador, ajustando el diseño para que se asemeje al de un Cessna 152.
