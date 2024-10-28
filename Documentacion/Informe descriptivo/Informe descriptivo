@@ -212,3 +212,20 @@ Flags de Control para Optimizar la Ejecución:
 Bandera para controlar el tiempo de espera y evitar retardos innecesarios en la comunicación.
 
 bool timeoutFlag = false;
+
+9. Sistema Embebido
+Componentes:
+ESP32: Controlador central para los variadores de frecuencia y MPU6050.
+Arduino UNO: Controla el panel de control, configurado con MobiFlight para activar los instrumentos.
+Protocolo y Conexiones:
+RS485: Protocolo para la comunicación con el variador de frecuencia.
+I2C: Utilizado por el MPU6050 para la detección de movimiento y aceleración.
+Configuración de Pines:
+RS485:
+GND y VCC a una fuente de 5V
+A y B al variador de frecuencia
+RE al GPIO4, DE al GPIO2, RO al GPIO16 (RX), DI al GPIO17 (TX) del ESP32
+MPU6050:
+GND y VCC al ESP32
+SCL al GPIO22, SDA al GPIO21
+
