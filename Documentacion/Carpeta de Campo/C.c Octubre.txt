@@ -73,3 +73,5 @@ Lucas Meabrio y Santiago Rubio: Instalacion y prueba del yoke y pedestal el el f
     • Lautaro Esteban: Avance con el informe descriptivo haciendo una base general de ella y empezando a agregarle la informacion del proyecto, Tambien, hizo pruebas basicas con una aplicacion llamada "QModMaster" usando un usb-RS485 pero no hubo respuesta correcta en la comunicacion y se sigue buscando la falla de la comunicacion.
     • Santiago Leiva: Complete la carpeta de campo desde el 9/10 hasta el dia de la fecha para mantenerla actualizada y ayude a realizar el soporte de la tele del panel de control y visualizacion
     • Leandro Flores: Termino el banner del proyecto y ayudo a la realizacion del informe descriptivo adjuntando imagenes e informacion importante
+    • Lucas Meabrio y Santiago Rubio:
+    • Emili Ano Romo Cordoba: Avance con el armado de la soporte de la television en la que se ve el panel de control y visualizacion haciendo los calculos y mediciones necesarias.
