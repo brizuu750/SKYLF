@@ -1,11 +1,10 @@
 Informe Descriptivo del Proyecto de Simulador de Vuelo Realista
 
-Carátula:
 
-Logo del Proyecto:
 
 Título:
-Simulador de Vuelo Realista con Control de Variadores de Frecuencia y Panel de Instrumentos Físicos
+ Simulador de Vuelo Realista con Control de Variadores de Frecuencia y Panel de Instrumentos Físicos
+
 
 Nombre del Proyecto y Año:  
 SKYFLY - 7° 2° Aviónica
@@ -22,9 +21,6 @@ https://github.com/brizuu750/SKYLF
 Link a Redes Sociales:  
 Instagram: https://www.instagram.com/skylf.proyect/ 
 Tiktok: https://www.tiktok.com/@skyfly826?_t=8qnCGQhRKsA&_r=1
-
-Diseño de la Carátula:  
-(Insertar diseño gráfico de la carátula)
 
 Presentación del Equipo:
 
@@ -88,6 +84,17 @@ Linkedin: Marco Baldovino
 
 Instagram:@jofiel_godoy
 
+Foto de cada integrante:  
+Santiago Rubio:                                  Lucas Meabrio:                        Marco Godoy Baldovino:
+
+Lautaro Esteban:                              Leandro Flores:                             Agustin Brizuela:
+
+                 Emiliano RomoCordoba:                                      Santiago Leiva:
+
+
+Foto Grupal:  
+
+
 Horas dedicadas por cada integrante:  
 
 Participaron un total de 8 personas en un promedio de 14 hs semanales durante 28 semanas aproximadamente
@@ -109,11 +116,11 @@ Participaron un total de 8 personas en un promedio de 14 hs semanales durante 28
 
 1. Introducción
 Este proyecto de Simulador de Vuelo Realista, basado en la cabina del Cessna 152, replica las maniobras y controles de la aeronave mediante la integración de un panel físico de control y un sistema de visualización interactuando con Flight Simulator 2020. Se implementa un circuito de comunicación mediante un Arduino UNO y un ESP32 que permiten gestionar diversos sistemas y enviar comandos a través de variables de comunicación específicas, sincronizando los instrumentos físicos con el simulador virtual. Además, el simulador utiliza un sistema de control de motores con variadores de frecuencia y sensor de movimiento MPU6050 para añadir realismo en el control de vuelo.
-
 2. Objetivo
-Objetivo General: Construir un simulador de vuelo con una interfaz de usuario realista, que permita experimentar el control de una aeronave tipo Cessna 152 mediante un panel físico conectado a Flight Simulator 2020.
-Objetivo Específico: Integrar un sistema de variadores de frecuencia, Arduino UNO y ESP32, junto con un panel de control que permita al usuario activar sistemas de vuelo, como el control de luces, bomba de combustible y buses aviónicos, replicando el entorno real de un avión en el simulador virtual.
-
+Objetivo General: 
+Construir un simulador de vuelo con una interfaz de usuario realista, que permita experimentar el control de una aeronave tipo Cessna 152 mediante un panel físico conectado a Flight Simulator 2020.
+Objetivo Específico: 
+Integrar un sistema de variadores de frecuencia, Arduino UNO y ESP32, junto con un panel de control que permita al usuario activar sistemas de vuelo, como el control de luces, bomba de combustible y buses aviónicos, replicando el entorno real de un avión en el simulador virtual.
 3. Descripción de la Solución
 El simulador incluye dos sistemas principales: un Panel de Control y un Panel de Visualización de Instrumentos, con un esquema de comunicación que integra varios componentes para emular los controles de un avión real.
 Panel de Control
@@ -123,7 +130,27 @@ Luces (BCN, LAND, TAXI, NAV, STRB): Controla las luces exteriores del avión par
 Interruptores de Bus Aviónico: Activa los sistemas de navegación y comunicación de la aeronave.
 Tubo Pitot: Controla el calentador del tubo Pitot para evitar el congelamiento.
 Magnetos: Distribuyen corriente eléctrica a las bujías, gestionadas por una llave rotativa de 6 estados.
+Primer: Se encarga de inyectar combustible a los cilindros del motor antes de arrancarlo, facilitando el arranque en condiciones especialmente frias.
 El Arduino UNO es el microcontrolador principal del panel de control y se configura mediante MobiFlight para ejecutar comandos específicos en Flight Simulator 2020 según los interruptores activados. Esto asegura que cada acción en el panel tenga un reflejo preciso en el simulador virtual, mejorando la inmersión en el entorno de vuelo.
+Configuración de las Palancas en el MobiFlight
+Paso a Paso de configuración de palancas para vincularlas con MobiFlight y el FS2020:
+1. Conectamos el Arduino UNO al MobiFlight y el FSUIPC7
+2. Asignamos un Pin del 2 al 13 del Arduino UNO a uno de los terminales de la palanca (En nuestro caso lo pusimos al pin 8 pero puede ser cualquiera)
+3. Seleccionar en MobiFlight la pestaña de "MobiFlight Modules"
+4. Para no tener inconvenientes actualizar el firmware así el MobiFlight detecte correctamente el la Arduino UNO
+5. En la barra inferior ir a la pestaña de "Add Device" para agregar un dispositivo que en nuestro caso es una Palanca.
+6. Luego le asignamos a la palanca el nombre con el que queramos que se identifique, siendo en este caso "Tubo Pitot" para la función de la palanca que es sobre el Calentador del Tubo Pitot
+7. Poner en la "Configuración de Pin" el pin que le asignamos a la palanca (en nuestro caso el Pin 8 de la Arduino UNO)
+8. En el Menú principal crear una configuración de entrada en el "Input Configs"
+9. Para editar la configuración selecciona a la derecha de la fila en "Edit"
+10. Luego seleccionar los dispositivos conectados al MobiFlight
+11. Seleccionar en el Action Type el "FSUIPC - Offset" para luego asignarle la acción al dispositivo que hayamos conectado (en nuestro caso la palanca)
+12. Dentro de la configuración de entrada se encuentran las configuraciones para cuando se activa la palanca "On Press" y cuando está del lado contrario "On Release"
+13. Para la configuración del Offset nos fijamos en el manual de Offset del FSUIPC que está en internet para buscar la acción de la palanca, y nos dice cuál código de Offset tiene que ir.
+14. En nuestro caso buscamos el del calentador del tubo pitot. Por lo que ponemos el que nos dice "029C"
+15. Para que el Calentador del tubo pitot del Cessna 152 se active en simultáneo a la palanca que conectamos al FS2020, le asignamos "1" como valor de seteo.
+16. En "On Release" de igual forma poner el mismo código de Offet pero que cuando se baje la palanca que el calentador se apague ponemos "0" como valor de seteo
+17. Luego de esto al probar la palanca que vinculamos a dispositivo que sea (en nuestro caso el calentador del tubo pitot), se tendría que activar simultáneamente
 Comunicación con el Variador de Frecuencia y Sistema de Control de Movimiento
 Para lograr una experiencia de vuelo más realista, el simulador utiliza un variador de frecuencia GK500-2T1.5B controlado por un ESP32 y un módulo RS485 para gestionar el movimiento de los motores, lo que permite simular inclinaciones en los ejes de cabeceo y alabeo. La configuración del variador de frecuencia y el sistema de comunicación están organizados de la siguiente forma:
 ESP32 y RS485: El ESP32 actúa como el controlador principal para la comunicación con el variador de frecuencia. La conexión se realiza mediante el protocolo RS485, que permite la transmisión de datos en tiempo real para ajustar la velocidad y dirección de los motores, necesarios para las maniobras de vuelo.
@@ -139,33 +166,54 @@ SCL al GPIO22 y SDA al GPIO21.
 Tasa de Transferencia: La comunicación con el variador de frecuencia se realiza a una velocidad de 9600 baudios. Esto permite un control preciso y estable de los motores, alineando las respuestas del sistema físico con los comandos generados en el simulador.
 Sensor de Movimiento MPU6050: Integrado al ESP32, el MPU6050 detecta la inclinación y aceleración en tiempo real, lo que permite ajustar los movimientos del simulador para reflejar las maniobras de vuelo de manera más precisa. Este sensor es crucial para sincronizar el sistema físico con los cambios en el entorno virtual del Flight Simulator 2020.
 Panel de Visualización de Instrumentos
-Este panel de visualización está diseñado para mostrar los datos de vuelo en una pantalla de 18 pulgadas, reflejando los instrumentos de la aeronave. La comunicación de los datos de vuelo se realiza mediante MobiFlight y FSUIPC7, que gestionan las variables de Flight Simulator 2020. Este diseño permite una representación en tiempo real de los parámetros del simulador, ajustando el diseño para que se asemeje al de un Cessna 152.
-
+Este panel de visualización está diseñado para mostrar los datos de vuelo en una pantalla de 18 pulgadas, reflejando los instrumentos de la aeronave. La comunicación de los datos de vuelo se realizaría mediante MobiFlight y FSUIPC7, que gestionan las variables de Flight Simulator 2020. Este diseño permite una representación en tiempo real de los parámetros del simulador, ajustando el diseño para que se asemeje al de un Cessna 152.
+Flight Simulator 2020
+Utilizamos Microsoft Flight Simulator - 40th Anniversary Edition, compatible con herramientas externas de comunicación que extraen variables en tiempo real, como Simvar Watcher.
+Simvar Watcher y Extracción de Variables
+El Simvar Watcher facilita la lectura de variables seleccionadas del simulador, configurado con las librerías SimConnect y otros archivos DLL y CFG, permitiendo acceder a las lecturas en tiempo real. Las variables se agrupan para la lectura de datos de instrumentos (altímetro, velocímetro, etc.) y control de movimiento.
+Comunicación con Simvar Watcher y SimConnect
+Para la integración de Simvar Watcher con Flight Simulator, utilizamos códigos en Visual Studio 2022. Estos códigos gestionan la conexión y extracción de variables, que se dividen según los instrumentos que controlan (altímetro, brujula, velocímetro, etc).
+Códigos de Instrumentos y Variables
+Cada instrumento está asignado a un código específico que se comunica con el simulador. Por ejemplo:
+Altímetro.cs: Extrae la altura en tiempo real.
+Variómetro.cs: Controla la velocidad vertical del avión.
+Velocímetro.cs: Muestra la velocidad de vuelo.
+Se identificaron problemas en ciertas variables, algunas arrojando valores inconsistentes, lo cual indica que se realizarán pruebas adicionales
 4. Segmento Destino y Alcance
 Este simulador está destinado a estudiantes de ingeniería, entusiastas de la aviación y centros de enseñanza técnica que busquen herramientas de formación práctica en sistemas de control, mecánica de vuelo y electrónica aplicada. El proyecto tiene el potencial de ser una plataforma educativa completa en simulación de vuelo.
-
 5. Captura Representativa del Proyecto
 
 6. Diagrama en Bloques del Proyecto
+diagrama general:
+
+Variador de frecuencias:
+
+cabe una posibilidad de que para evitar fallas en la transmision y recepcion de datos se usen 2 ESP32 y asi quedaría el diagrama de tal:
+
+Panel de control y visualización:
+
 
 7. Resultados Conseguido
 Se trabaja en la implementación de la conexión y funcionamiento del panel de control con Flight Simulator 2020. Las pruebas iniciales de los motores todavía está en proceso. El sistema continúa en fase de pruebas y optimización, principalmente en el uso de variables de comunicación para mejorar la precisión de las lecturas y comandos en tiempo real, y también la comunicación con el variador de frecuencias
-
 8. Software
-Diagrama en Bloques:
 Lenguajes Utilizados:
 C/C++: Programación del ESP32 y Arduino UNO para la comunicación con los variadores de frecuencia.
 C/C++: Programación del Arduino UNO para gestionar los interruptores.
-Capturas de Código y Herramientas:
-Fragmentos de código en Arduino IDE para el control del ESP32 y la programación de los instrumentos con MobiFlight.
-Configuración de FSUIPC7 para la personalización de los instrumentos en pantalla.
+Capturas de Códigos Significativos:
+Codigo que se le puede mandar frecuencia en numero entero:
+
+
+Codigo que busca los registros validos:
+
+
+Captura de Interfaz Visual:
+
+
 
 Estructuras de Datos:
-
 Las librerías principales usadas en el variador de frecuencias son:
 ModbusMaster: Esta librería permite la comunicación Modbus RTU entre el ESP32 y el variador de frecuencia, facilitando la lectura y escritura de registros Modbus. Es útil para enviar comandos de control y recibir estados o lecturas de dispositivos Modbus.
 MPU6050: Esta librería permite gestionar el sensor MPU6050, que proporciona datos de aceleración y giroscopio, esenciales para el cálculo de orientación y movimientos en el simulador. La comunicación se realiza a través de I2C, y la librería facilita la lectura de los valores en tiempo real.
-
 Variables Globales para Configuración Básica:
 Almacenan parámetros básicos de la comunicación Modbus que se usan en varias partes del código, lo que facilita cambios futuros.
 const uint8_t slaveID = 1; // ID del dispositivo esclavo (variador de frecuencia)
@@ -213,6 +261,68 @@ Bandera para controlar el tiempo de espera y evitar retardos innecesarios en la 
 
 bool timeoutFlag = false;
 
+Lista de variables del Flight Simulator 2020
+Variables de instrumentos:
+Altímetro:
+
+
+Brújula magnética:
+
+Coordinador de giro:
+
+
+
+Horizonte Artificial:
+
+Variómetro:
+
+Velocímetro:
+
+ADF:
+
+
+VOR:
+No se que pasa con estas variables, algunas me dan en 0 y otras me dan numeros random.
+
+
+
+Esta va mas o menos bien, pero hay veces que me da números cualquiera como 85634.
+
+Solo hay una que me va bien y es esta:
+
+ILS:
+Las variables de LOC no andan, no encuentro la causa todavía.
+
+
+
+Las de GS andan bien excepto “NAV GS LATLONALT”. Esa da a veces 0 y otras veces anda bien.
+
+
+
+Las de MARKER dan todas raras (aunque supongo que es porque no lo probé aterrizando en un aeropuerto, ahí tengo que ver que pasa).
+
+
+
+Indicador de Temperatura y Presión del Aceite:
+
+Indicador de carga de batería:
+
+
+
+Indicador de RPM:
+
+
+
+Indicador de combustible:
+
+
+
+Variables para utilizar con el MPU6050
+
+
+
+
+
 9. Sistema Embebido
 Componentes:
 ESP32: Controlador central para los variadores de frecuencia y MPU6050.
@@ -228,16 +338,13 @@ RE al GPIO4, DE al GPIO2, RO al GPIO16 (RX), DI al GPIO17 (TX) del ESP32
 MPU6050:
 GND y VCC al ESP32
 SCL al GPIO22, SDA al GPIO21
-
 10. Electrónica
-Diagrama en Bloques:
 Componentes y Configuraciones:
 Variador de Frecuencia GK500-2T1.5B: Utilizado para controlar los motores a través del protocolo RS485, con una tasa de transferencia de 9600 baudios.
 Arduino UNO: Control del panel de instrumentos.
 MPU6050: Detección de movimiento y orientación para simular los ejes de vuelo.
 Esquemático de Conexión y Fuente de Alimentación:
 Fuente de alimentación separada para el ESP32 y variador de frecuencia, asegurando estabilidad y seguridad en la operación.
-
 11. Estructura
 
 12. Anexo
@@ -252,3 +359,4 @@ Pruebas de Comunicación: Las pruebas realizadas con QModMaster y otros software
 Fuentes:
 
 https://github.com/brizuu750/SKYLF/tree/main/variadores%20de%20frecuencia/manuales
+
