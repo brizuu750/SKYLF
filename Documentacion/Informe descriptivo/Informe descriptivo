@@ -143,3 +143,10 @@ Este panel de visualización está diseñado para mostrar los datos de vuelo en 
 
 4. Segmento Destino y Alcance
 Este simulador está destinado a estudiantes de ingeniería, entusiastas de la aviación y centros de enseñanza técnica que busquen herramientas de formación práctica en sistemas de control, mecánica de vuelo y electrónica aplicada. El proyecto tiene el potencial de ser una plataforma educativa completa en simulación de vuelo.
+
+5. Captura Representativa del Proyecto
+
+6. Diagrama en Bloques del Proyecto
+
+7. Resultados Conseguido
+Se trabaja en la implementación de la conexión y funcionamiento del panel de control con Flight Simulator 2020. Las pruebas iniciales de los motores todavía está en proceso. El sistema continúa en fase de pruebas y optimización, principalmente en el uso de variables de comunicación para mejorar la precisión de las lecturas y comandos en tiempo real, y también la comunicación con el variador de frecuencias
