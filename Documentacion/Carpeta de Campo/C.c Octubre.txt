@@ -27,25 +27,25 @@ C.c Octubre
 10/10
     • Agustin Brizuela: Continuo puliendo el codigo, y testeandolo con los botones y interruptores del panel, corrijiendo errores que vayan surgiendo y mejorandolo para su maxima optimizacion.
     • Jofiel Godoy: Investigó por medio de videos y foros sobre como asignarle acciones a las palancas al FS2020 mediante el MobiFlight para que al activarlo en el panel físico en el software (FS2020) también se active
-    •Leandro Flores, Santiago Leiva y Lautaro Esteban: Terminaron el segundo codigo para localizar la direccion de registro de los valores de frecuencia, logrando comunicarse con el variador mediante el esp32 y el rs485 y obteniendo 256 direcciones posibles. Ademas se empezo a realizar un codigo de barrido para buscar y probar los registros que permitan la recepcion y transmision de datos. 
+    • Leandro Flores, Santiago Leiva y Lautaro Esteban: Terminaron el segundo codigo para localizar la direccion de registro de los valores de frecuencia, logrando comunicarse con el variador mediante el esp32 y el rs485 y obteniendo 256 direcciones posibles. Ademas se empezo a realizar un codigo de barrido para buscar y probar los registros que permitan la recepcion y transmision de datos. 
     • Lucas Meabrio y Santiago Rubio: Empezaron con la extraxcion de variables y investigacion sobre el programa Air Manager
 11/10 
     • Agustin Brizuela: Solucono errores de configuracion del Thonny y la raspberry
     • LAutaro Esteban: Continuo con el codigo de barrido para buscar y probar los registros que permitan la recepcion y transmision de datos.
 14/10 
     • Agustin Brizuela, Jofiel Godoy, Santiago Leiva, Santiago Rubio: Ir a capital a comprar un modulo rs485, una llave selectora, pulsadores, un mpu6050 y un socalo para una raspberry pi pico 
-    •Leandro Flores, Lautaro Esteban:  Por un problema de conexion dejo de andar el circuito y al testearlo con un multimetro se dio con que se quemo el rs485
+    • Leandro Flores, Lautaro Esteban:  Por un problema de conexion dejo de andar el circuito y al testearlo con un multimetro se dio con que se quemo el rs485
 15/10
 
-    •Jofiel Godoy: Sacó las medidas de la llave selectora rotativa y las palancas para ubicarlos correctamente en el panel. 
+    • Jofiel Godoy: Sacó las medidas de la llave selectora rotativa y las palancas para ubicarlos correctamente en el panel. 
     • Santiago Leiva y Lautaro Esteban: Cambiaron el modulo rs485 quemado , terminaron el codigo de barrido para buscar y probar los registros que permitan la recepcion y transmision de datos. Al no funcionar el codigo, empezaron a probar una por una las 256 direcciones posibles.
     • Santiago Rubio: Hacer diferentes codigosa para extraer las variables de diferentes instrumentos (excepto del indicador de LOC y de VOR/GS) y modificar el "program.cs" para que agarre todas las variables y poder leerlos en el "SimConnectApp.exe" (archivo que se crea al compílar el proyecto de visual studio code)
 16/10 
     • Agustin Brizuela: pasaje del logo del proyecto  a png para el banner
 
-    •Leandro Flores y Lautaro Esteban: Continuaron probando lo que faltaba de las 256 direcciones.
-    •Lucas Meabrio: Investigacion de las variables para los paneles
-    •Santiago Rubio: Hacer los codigos para que extraigan las variables necesarias del indicador de LOC y de VOR/GS. Luego mejoro el "program.cs" para que se comunique tambien con esos codigos.
+    • Leandro Flores y Lautaro Esteban: Continuaron probando lo que faltaba de las 256 direcciones.
+    • Lucas Meabrio: Investigacion de las variables para los paneles
+    • Santiago Rubio: Hacer los codigos para que extraigan las variables necesarias del indicador de LOC y de VOR/GS. Luego mejoro el "program.cs" para que se comunique tambien con esos codigos.
 17/10
     • Agustin Brizuela y Jofiel Godoy: Testeamos con la computadora que el MobiFlight detecte el arduino uno con ayuda de un programa llamado "FSUIPC7" que posibilita que el Hardware pueda comunicarse con el FS2020 mediante el MobiFlight. Pudimos verificar que la Arduino UNO si se vinculó correctamente con el MobiFlight.
     • Leandro Flores, Santiago Leiva y Lautaro Esteban: Por problemas de comunicacion buscamos de desbuguear la comunicaccion por el protocolo modbus entre el esp32 y el rs485; probandolos con codigos basico con un osciloscopio y multimetro conectados.
