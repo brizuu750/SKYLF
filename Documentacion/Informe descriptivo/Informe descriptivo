@@ -152,7 +152,7 @@ Este simulador está destinado a estudiantes de ingeniería, entusiastas de la a
 Se trabaja en la implementación de la conexión y funcionamiento del panel de control con Flight Simulator 2020. Las pruebas iniciales de los motores todavía está en proceso. El sistema continúa en fase de pruebas y optimización, principalmente en el uso de variables de comunicación para mejorar la precisión de las lecturas y comandos en tiempo real, y también la comunicación con el variador de frecuencias
 
 8. Software
-Diagrama en Bloques: (Incluir el diagrama en bloques de la arquitectura de software, desde el ESP32 hasta Flight Simulator 2020).
+Diagrama en Bloques:
 Lenguajes Utilizados:
 C/C++: Programación del ESP32 y Arduino UNO para la comunicación con los variadores de frecuencia.
 C/C++: Programación del Arduino UNO para gestionar los interruptores.
@@ -229,3 +229,11 @@ MPU6050:
 GND y VCC al ESP32
 SCL al GPIO22, SDA al GPIO21
 
+10. Electrónica
+Diagrama en Bloques:
+Componentes y Configuraciones:
+Variador de Frecuencia GK500-2T1.5B: Utilizado para controlar los motores a través del protocolo RS485, con una tasa de transferencia de 9600 baudios.
+Arduino UNO: Control del panel de instrumentos.
+MPU6050: Detección de movimiento y orientación para simular los ejes de vuelo.
+Esquemático de Conexión y Fuente de Alimentación:
+Fuente de alimentación separada para el ESP32 y variador de frecuencia, asegurando estabilidad y seguridad en la operación.
