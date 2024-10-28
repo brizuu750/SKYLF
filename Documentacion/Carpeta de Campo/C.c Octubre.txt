@@ -60,13 +60,14 @@ Lucas Meabrio y Santiago Rubio: Instalacion y prueba del yoke y pedestal el el f
     • Lautaro Esteban: Conecto la gnd del variador para hacer pruebas y empezo un  nuevo codigo para sacar todas las direcciones del variador.
 22/10
     • Agustin Brizuela y Jofiel Godoy: Probamos un nuevo método de conexión del FS2020 hacia el panel mediante la herramienta MobiFLight, luego hicimos testeo con la aeronave cessna 172 dentro del FS2020 configurando la tecla del Tubo pitot con la tecla conectada a la Arduino UNO y configurando el MobiFlight mediante el FSUIPC7 para comunicar a los pines de la Arduino UNO. Este testeo resultó bien ya que al accionar la palanca asignada al Tubo Pitot, en el FS2020 se mostraba en tiempo simultáneo que se mueve la palanca.
-    •  Leiva santiago y Esteban Lautaro: Terminaron y modificaron el codigo para extraer toda las direcciones del variador y empezaron a extraerlas. Ademas continuaron con el informe descriptivo.
+    •  Leiva santiago y Esteban Lautaro: Terminaron y modificaron el codigo para extraer toda las direcciones del variador y empezaron a extraerlas.
     • Flores Leandro: Empezo a hacer el banner
     • Lucas Meabrio: Empezo con el informe descriptivo de las variables para la simulacion del vuelo. Actualizo los codigos del altimetro, de la brujula magnetica, del coordinador de giro y el velocimetro
     
 23/!0
     • Agustin Brizuela y Jofiel Godoy: Cortamos una madera con las medidas ideales para el panel del Cessna 172, determinando como se ubicarían exactamente las palancas y llave selectora rotativa. Luego del colegio hubo una examinación sobre la cabina del Cessna 152. 
     • Lucas Meabrio: Resubio actualizados los codigos que utilizan el horizonte artificial, el indicador de ADF, el indicadro Vor-GS, el indicador del LOC y el variometro
+    • Lautaro Esteban: Realizo testeos basicos para la comunicacion con el variador de frecuencias atraves de putty pero no hubo caso, se encontro una aplicacion que esta dedicada a la comunicacion modbus master para probar proximamente, Tambien hizo diagramas de la comunicacion con el variador de frecuencias aclarando las conexiones y pines, Uno de los diagramas era con 2 ESP32 para ver como quedaria en el caso de que se usen 2 ESP32 en la comunicacion con cada variador de frecuencias para evitar fallas como colision de datos, problemas de funcionamientos, etc.
 
 24/10
     • Agustín Brizuela y Jofiel Godoy: llegamos a la conlusión de que el Cessna 172 G1000 no es la mejor opción para la cabina del simulador, ya que incorpora el Garmin G1000, y ese instrumento nos llevaría mucho más del presupuesto que nos proporcionó el colegio. Entonces llegamos a la conclusión de que es mejor configurable y adaptable la aeronave cessna 152, debido a que esta no incorpora garmin G1000 y es una aeronave que contiene todas las variables que probamos y es en su similitud muy parecido al Cessna 172 Skyhawk del que antes teníamos definidido por lo que nos parece una excelente opción.
