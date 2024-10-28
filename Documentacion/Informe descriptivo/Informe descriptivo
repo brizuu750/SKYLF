@@ -237,3 +237,18 @@ Arduino UNO: Control del panel de instrumentos.
 MPU6050: Detección de movimiento y orientación para simular los ejes de vuelo.
 Esquemático de Conexión y Fuente de Alimentación:
 Fuente de alimentación separada para el ESP32 y variador de frecuencia, asegurando estabilidad y seguridad en la operación.
+
+11. Estructura
+
+12. Anexo
+
+Resultados de Investigaciones Hechas:
+
+Protocolo Modbus: El protocolo Modbus es ampliamente utilizado en la automatización industrial para la comunicación entre dispositivos. Permite la transmisión de datos de forma sencilla y eficiente, siendo esencial para el control de variadores de frecuencia. Se ha comprobado que su implementación con el ESP32 permite una integración fluida con otros dispositivos mediante RS485, ofreciendo una distancia de comunicación mayor y una mayor inmunidad a interferencias.
+Variadores de Frecuencia: Los variadores de frecuencia, como el GK500-2T1.5B, permiten controlar la velocidad y es para motores de aplicaciones eléctricas. A través de la comunicación Modbus, se pueden ajustar parámetros en tiempo real, facilitando la implementación de sistemas de control más precisos.
+Sensor MPU6050: Este sensor combina un acelerómetro y un giroscopio en un solo chip, permitiendo la captura de datos sobre orientación y movimiento. La utilización de este sensor en el simulador de vuelo ha mostrado ser efectiva para la estabilización y el control dinámico del simulador, proporcionando datos esenciales para la experiencia de vuelo realista.
+Pruebas de Comunicación: Las pruebas realizadas con QModMaster y otros softwares de monitoreo han demostrado la capacidad de establecer comunicación entre el ESP32 y el variador de frecuencia. Sin embargo, se han identificado registros que generan errores, indicando la necesidad de ajustar la configuración del variador y verificar el direccionamiento de los registros.
+
+Fuentes:
+
+https://github.com/brizuu750/SKYLF/tree/main/variadores%20de%20frecuencia/manuales
