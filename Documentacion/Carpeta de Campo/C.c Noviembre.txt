@@ -1,0 +1,17 @@
+Cc Noviembre 
+1/11/24 
+  Santiago Rubio, Agustin Brizuela, Jofiel Godoy y Lucas Meabrio probaron el codigo de la llave selectora en el mobiflight para el magneto/iman de la aeronave. 
+5/11/24
+  Jofiel Godoy, Santiago Rubio, Agustin Brizuela y Lucas Meabrio testearon dos arduinos a la vez en el mobiflight para comprobar la compatibilidad de las mismas simultaneamente con el
+  programa.
+  Santiago agrego los codigos necesarios para las comunicaciones entre el MPU y el MFS para el movimiento de la cabina y que funcione correctamente. 
+  Lautaro Esteban, Santiago Leiva y Leandro Flores realizaron un escaneo general de direccion de registros desde modscan y tambien realizaron otro escaneo de registros de envio.
+    desde 40.000 hasta 50.000. Investigaron un nuuevo metodo de funcionamiento con un potenciometro digital. Se planeo e investigo las librerias y elementos necesarios para el codigo
+    con el nuevo metodo de comunicacion.
+  Agustin Brizuela realizo la impresion 3d de dos carcasas para las arduinos uno.
+6/11/24
+  Jofiel Godoy y Agustin Brizuela continuaron con el modelado 3d del panel de control. Soldaron 8 pines del potenciometro digital y la llave selectora para su correcto funcionmiento.
+  Santiago Rubio continuo con el codigo para la comparacion mencionado en el dia 5/11. Tambien probo la llave selectora junto a Lucas Meabrio.
+  Lucas Meabrio inicio la carpeta de campo de novimebre.
+  Emiliano Romo Cordoba continuo con las reformas para la cabina del simulador, tomando las medidas para poner un soporte para el yoke, 
+  Lautaro Esteban, Santiago Leiva y Leandro Flores 
